@@ -1,0 +1,66 @@
+name: Build uploaded HTML project
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+    paths:
+      - project.zip
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les fichiers
+        uses: actions/checkout@v4
+
+      - name: Extraire le projet
+        run: |
+          rm -rf generated
+          mkdir generated
+          unzip -q project.zip -d generated
+
+      - name: Installer Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Installer Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: "9.5.0"
+
+      - name: Installer Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Installer la plateforme Android
+        run: sdkmanager "platforms;android-37" "build-tools;36.0.0"
+
+      - name: Compiler l’APK
+        working-directory: generated
+        run: gradle :app:assembleDebug --stacktrace
+
+      - name: Préparer l’APK
+        run: |
+          mkdir -p apk-output
+          cp generated/app/build/outputs/apk/debug/app-debug.apk "apk-output/generated-app-debug.apk"
+
+      - name: Publier comme artefact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mon-application-apk
+          path: apk-output/*.apk
+
+      - name: Publier dans les Releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view generated-apk >/dev/null 2>&1; then
+            gh release upload generated-apk apk-output/*.apk --clobber
+          else
+            gh release create generated-apk apk-output/*.apk --title "APK généré" --notes "APK debug généré automatiquement par HTML vers APK Builder."
+          fi
