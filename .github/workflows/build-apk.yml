@@ -29,22 +29,41 @@ jobs:
           distribution: temurin
           java-version: "17"
 
-      - name: Installer Gradle
+      - name: Installer Gradle 8.9
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.13"
+          gradle-version: "8.9"
 
-      - name: Installer Android SDK
+      - name: Installer Android SDK 35
         uses: android-actions/setup-android@v3
 
-      - name: Installer la plateforme Android
+      - name: Installer la plateforme Android 35
         run: |
           yes | sdkmanager --licenses >/dev/null 2>&1 || true
-          sdkmanager "platforms;android-36" "build-tools;36.0.0"
+          sdkmanager "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Vérifier le projet
+        working-directory: generated
+        run: |
+          test -f settings.gradle.kts
+          test -f build.gradle.kts
+          test -f app/build.gradle.kts
+          test -f app/src/main/AndroidManifest.xml
+          test -f app/src/main/assets/www/index.html
 
       - name: Compiler l’APK
         working-directory: generated
-        run: gradle :app:assembleDebug --stacktrace
+        shell: bash
+        run: |
+          set -o pipefail
+          if ! gradle --no-daemon --console=plain :app:assembleDebug --stacktrace 2>&1 | tee ../build.log; then
+            echo "::group::Dernières lignes du journal Gradle"
+            tail -n 160 ../build.log || true
+            echo "::endgroup::"
+            MESSAGE=$(grep -E "error:|A problem occurred|What went wrong|Could not|FAILURE:" ../build.log | tail -n 1 || true)
+            echo "::error title=Compilation Android::${MESSAGE:-La compilation Gradle a échoué. Ouvre cette étape pour lire le journal.}"
+            exit 1
+          fi
 
       - name: Préparer l’APK
         run: |
