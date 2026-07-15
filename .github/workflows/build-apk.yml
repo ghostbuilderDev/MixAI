@@ -32,13 +32,15 @@ jobs:
       - name: Installer Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "9.5.0"
+          gradle-version: "8.13"
 
       - name: Installer Android SDK
         uses: android-actions/setup-android@v3
 
       - name: Installer la plateforme Android
-        run: sdkmanager "platforms;android-37" "build-tools;36.0.0"
+        run: |
+          yes | sdkmanager --licenses >/dev/null 2>&1 || true
+          sdkmanager "platforms;android-36" "build-tools;36.0.0"
 
       - name: Compiler l’APK
         working-directory: generated
