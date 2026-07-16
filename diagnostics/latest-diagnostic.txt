@@ -4,11 +4,11 @@
 Application : Mon application
 Package     : com.yoann.ghostbuilderdev
 Version     : 1.0.0 (1)
-Date UTC    : 2026-07-15 23:43:20 UTC
+Date UTC    : 2026-07-16 07:40:00 UTC
 Dépôt       : ghostbuilderDev/MixAI
 Branche     : main
-Run         : #6
-URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29459346950
+Run         : #7
+URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29480657441
 État du job : failure
 
 === ANALYSE AUTOMATIQUE DE LA CAUSE PROBABLE ===
@@ -149,8 +149,8 @@ Installed packages:
 
 
 === INFORMATIONS SUR project.zip ===
--rw-r--r-- 1 runner runner 20M Jul 15 23:42 project.zip
-c01a1514e2366c91c0ac056ac9e15f0b60a478eca96c06d4616c932cabb0a2f7  project.zip
+-rw-r--r-- 1 runner runner 20M Jul 16 07:39 project.zip
+91fec70b851d6fddf0e328e45d11f248f877c7a6bfb5d7cb326028aa36225aa6  project.zip
 Archive:  project.zip
     testing: LOCAL_WEB_DIAGNOSTIC.txt   OK
     testing: settings.gradle.kts      OK
@@ -171,10 +171,10 @@ Archive:  project.zip
     testing: app/src/main/assets/www/ai-expert-knowledge-pack.json   OK
     testing: app/src/main/assets/www/ai-mix-knowledge-base.json   OK
     testing: app/src/main/assets/www/manifest.webmanifest   OK
-    testing: app/src/main/assets/www/README.txt   OK
     testing: app/src/main/assets/www/STYLE_DNA_PRO_METHOD.md   OK
-    testing: app/src/main/assets/www/sw.js   OK
+    testing: app/src/main/assets/www/README.txt   OK
     testing: app/src/main/assets/www/validation-report.json   OK
+    testing: app/src/main/assets/www/sw.js   OK
     testing: app/src/main/assets/www/android-bridge.js   OK
     testing: app/src/main/res/mipmap-mdpi/ic_launcher.png   OK
     testing: app/src/main/res/mipmap-hdpi/ic_launcher.png   OK
@@ -203,11 +203,11 @@ generated/app/src/main/assets/www/manifest.webmanifest | 220 octets
 generated/app/src/main/assets/www/sw.js | 519 octets
 generated/app/src/main/assets/www/validation-report.json | 341 octets
 generated/app/src/main/java/com/yoann/ghostbuilderdev/MainActivity.java | 15806 octets
-generated/app/src/main/res/mipmap-hdpi/ic_launcher.png | 4707 octets
-generated/app/src/main/res/mipmap-mdpi/ic_launcher.png | 2519 octets
-generated/app/src/main/res/mipmap-xhdpi/ic_launcher.png | 8477 octets
-generated/app/src/main/res/mipmap-xxhdpi/ic_launcher.png | 18079 octets
-generated/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png | 30358 octets
+generated/app/src/main/res/mipmap-hdpi/ic_launcher.png | 4607 octets
+generated/app/src/main/res/mipmap-mdpi/ic_launcher.png | 2445 octets
+generated/app/src/main/res/mipmap-xhdpi/ic_launcher.png | 8445 octets
+generated/app/src/main/res/mipmap-xxhdpi/ic_launcher.png | 18053 octets
+generated/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png | 30329 octets
 generated/app/src/main/res/values-v31/styles.xml | 452 octets
 generated/app/src/main/res/values/colors.xml | 161 octets
 generated/app/src/main/res/values/strings.xml | 116 octets
