@@ -4,11 +4,11 @@
 Application : Mon application
 Package     : com.yoann.ghostbuilderdev
 Version     : 1.0.0 (1)
-Date UTC    : 2026-07-16 13:41:14 UTC
+Date UTC    : 2026-07-16 13:42:58 UTC
 Dépôt       : ghostbuilderDev/MixAI
 Branche     : main
-Run         : #10
-URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29503183399
+Run         : #11
+URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29503318316
 État du job : success
 
 === ANALYSE AUTOMATIQUE DE LA CAUSE PROBABLE ===
@@ -25,8 +25,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
-> Task :app:javaPreCompileDebug
 > Task :app:checkDebugAarMetadata
+> Task :app:javaPreCompileDebug
 > Task :app:generateDebugResValues
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
@@ -38,8 +38,8 @@ Daemon will be stopped at the end of the build
 > Task :app:parseDebugLocalResources
 > Task :app:processDebugManifest
 > Task :app:mergeDebugShaders
-> Task :app:compileDebugShaders NO-SOURCE
 > Task :app:processDebugManifestForPackage
+> Task :app:compileDebugShaders NO-SOURCE
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
 > Task :app:desugarDebugFileDependencies
@@ -48,9 +48,9 @@ Daemon will be stopped at the end of the build
 > Task :app:checkDebugDuplicateClasses
 > Task :app:mergeDebugJniLibFolders
 > Task :app:mergeExtDexDebug
-> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugNativeLibs NO-SOURCE
 > Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeLibDexDebug
 > Task :app:mergeDebugJavaResource
 > Task :app:processDebugResources
 > Task :app:validateSigningDebug
@@ -67,9 +67,9 @@ Note: Recompile with -Xlint:deprecation for details.
 > Task :app:packageDebug
 > Task :app:createDebugApkListingFileRedirect
 > Task :app:assembleDebug
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/compile-1784209263881.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/compile-1784209367705.json
 
-BUILD SUCCESSFUL in 14s
+BUILD SUCCESSFUL in 15s
 32 actionable tasks: 32 executed
 
 === VERSIONS DE L’ENVIRONNEMENT ===
@@ -130,8 +130,8 @@ Installed packages:
 
 
 === INFORMATIONS SUR project.zip ===
--rw-r--r-- 1 runner runner 209K Jul 16 13:40 project.zip
-fb83f3721d949b5c338d9c46187f3b227db16120d4b39a1cddb11f3bae21ba71  project.zip
+-rw-r--r-- 1 runner runner 209K Jul 16 13:42 project.zip
+943df35e65c2dfc2082889b0f31602c6685bfb231126fa25a0410db97e2010a6  project.zip
 Archive:  project.zip
     testing: LOCAL_WEB_DIAGNOSTIC.txt   OK
     testing: settings.gradle.kts      OK
@@ -163,7 +163,7 @@ generated/.github/workflows/build-apk.yml | 12141 octets
 generated/.gitignore | 54 octets
 generated/.gradle/8.9/checksums/checksums.lock | 17 octets
 generated/.gradle/8.9/dependencies-accessors/gc.properties | 0 octets
-generated/.gradle/8.9/executionHistory/executionHistory.bin | 89749 octets
+generated/.gradle/8.9/executionHistory/executionHistory.bin | 89750 octets
 generated/.gradle/8.9/executionHistory/executionHistory.lock | 17 octets
 generated/.gradle/8.9/fileChanges/last-build.bin | 1 octets
 generated/.gradle/8.9/fileHashes/fileHashes.bin | 23297 octets
@@ -818,7 +818,7 @@ public class MainActivity extends Activity {
 ============================================================
  DIAGNOSTIC LOCAL DU PROJET WEB
 ============================================================
-Date : 2026-07-16T13:40:09.089Z
+Date : 2026-07-16T13:41:57.641Z
 Application : Mon application
 Package : com.yoann.ghostbuilderdev
 Fichiers intégrés : 2
