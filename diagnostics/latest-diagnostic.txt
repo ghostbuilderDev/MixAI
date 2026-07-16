@@ -4,92 +4,73 @@
 Application : Mon application
 Package     : com.yoann.ghostbuilderdev
 Version     : 1.0.0 (1)
-Date UTC    : 2026-07-16 07:40:00 UTC
+Date UTC    : 2026-07-16 07:53:04 UTC
 Dépôt       : ghostbuilderDev/MixAI
 Branche     : main
-Run         : #7
-URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29480657441
-État du job : failure
+Run         : #8
+URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29481351665
+État du job : success
 
 === ANALYSE AUTOMATIQUE DE LA CAUSE PROBABLE ===
 - Cause non classée automatiquement. Le journal complet est inclus plus bas.
 
 === CODE DE SORTIE DE LA COMPILATION ===
-1
+0
 
 === ERREURS EXTRAITES DU JOURNAL ===
-3:FAILURE: Build failed with an exception.
-5:* What went wrong:
-12:Error: Could not find or load main class android.useAndroidX=true
-13:Caused by: java.lang.ClassNotFoundException: android.useAndroidX=true
-21:* Exception is:
-22:org.gradle.api.GradleException: Unable to start the daemon process.
-28:Error: Could not find or load main class android.useAndroidX=true
-29:Caused by: java.lang.ClassNotFoundException: android.useAndroidX=true
-48:	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:41)
-49:	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:26)
 
 === 500 DERNIÈRES LIGNES DU JOURNAL GRADLE ===
 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:javaPreCompileDebug
+> Task :app:checkDebugAarMetadata
+> Task :app:generateDebugResValues
+> Task :app:mapDebugSourceSetPaths
+> Task :app:generateDebugResources
+> Task :app:packageDebugResources
+> Task :app:mergeDebugResources
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:extractDeepLinksDebug
+> Task :app:parseDebugLocalResources
+> Task :app:processDebugMainManifest
+> Task :app:processDebugManifest
+> Task :app:mergeDebugShaders
+> Task :app:compileDebugShaders NO-SOURCE
+> Task :app:processDebugManifestForPackage
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:mergeDebugAssets
+> Task :app:desugarDebugFileDependencies
+> Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:checkDebugDuplicateClasses
+> Task :app:compressDebugAssets
+> Task :app:processDebugResources
+> Task :app:mergeExtDexDebug
+> Task :app:mergeLibDexDebug
+> Task :app:mergeDebugJavaResource
 
-FAILURE: Build failed with an exception.
+> Task :app:compileDebugJavaWithJavac
+Note: /home/runner/work/MixAI/MixAI/generated/app/src/main/java/com/yoann/ghostbuilderdev/MainActivity.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
 
-* What went wrong:
-Unable to start the daemon process.
-This problem might be caused by incorrect configuration of the daemon.
-For example, an unrecognized jvm option is used.For more details on the daemon, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html in the Gradle documentation.
-Process command line: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java android.useAndroidX=true android.nonTransitiveRClass=true --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.9/lib/gradle-daemon-main-8.9.jar -javaagent:/home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.9/lib/agents/gradle-instrumentation-agent-8.9.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.9
-Please read the following process output to find out more:
------------------------
-Error: Could not find or load main class android.useAndroidX=true
-Caused by: java.lang.ClassNotFoundException: android.useAndroidX=true
+> Task :app:dexBuilderDebug
+> Task :app:mergeDebugGlobalSynthetics
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:mergeProjectDexDebug
+> Task :app:validateSigningDebug
+> Task :app:writeDebugAppMetadata
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:packageDebug
+> Task :app:createDebugApkListingFileRedirect
+> Task :app:assembleDebug
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/compile-1784188330595.json
 
-
-* Try:
-> Run with --info or --debug option to get more log output.
-> Run with --scan to get full insights.
-> Get more help at https://help.gradle.org.
-
-* Exception is:
-org.gradle.api.GradleException: Unable to start the daemon process.
-This problem might be caused by incorrect configuration of the daemon.
-For example, an unrecognized jvm option is used.For more details on the daemon, please refer to https://docs.gradle.org/8.9/userguide/gradle_daemon.html in the Gradle documentation.
-Process command line: /usr/lib/jvm/temurin-17-jdk-amd64/bin/java android.useAndroidX=true android.nonTransitiveRClass=true --add-opens=java.base/java.util=ALL-UNNAMED --add-opens=java.base/java.lang=ALL-UNNAMED --add-opens=java.base/java.lang.invoke=ALL-UNNAMED --add-opens=java.prefs/java.util.prefs=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED --add-opens=java.base/java.nio.charset=ALL-UNNAMED --add-opens=java.base/java.net=ALL-UNNAMED --add-opens=java.base/java.util.concurrent.atomic=ALL-UNNAMED -Xmx2048m -Dfile.encoding=UTF-8 -Duser.country -Duser.language=en -Duser.variant -cp /home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.9/lib/gradle-daemon-main-8.9.jar -javaagent:/home/runner/work/_temp/.gradle-actions/gradle-installations/installs/gradle-8.9/lib/agents/gradle-instrumentation-agent-8.9.jar org.gradle.launcher.daemon.bootstrap.GradleDaemon 8.9
-Please read the following process output to find out more:
------------------------
-Error: Could not find or load main class android.useAndroidX=true
-Caused by: java.lang.ClassNotFoundException: android.useAndroidX=true
-
-	at org.gradle.launcher.daemon.client.DaemonGreeter.parseDaemonOutput(DaemonGreeter.java:41)
-	at org.gradle.launcher.daemon.client.DefaultDaemonStarter.startProcess(DefaultDaemonStarter.java:219)
-	at org.gradle.launcher.daemon.client.DefaultDaemonStarter.startDaemon(DefaultDaemonStarter.java:175)
-	at org.gradle.launcher.daemon.client.DefaultDaemonConnector.doStartDaemon(DefaultDaemonConnector.java:222)
-	at org.gradle.launcher.daemon.client.DefaultDaemonConnector.startSingleUseDaemon(DefaultDaemonConnector.java:247)
-	at org.gradle.launcher.daemon.client.SingleUseDaemonClient.execute(SingleUseDaemonClient.java:60)
-	at org.gradle.launcher.daemon.client.SingleUseDaemonClient.execute(SingleUseDaemonClient.java:37)
-	at org.gradle.launcher.cli.RunBuildAction.run(RunBuildAction.java:56)
-	at org.gradle.internal.Actions$RunnableActionAdapter.execute(Actions.java:167)
-	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:333)
-	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:297)
-	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:74)
-	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:30)
-	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:96)
-	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:40)
-	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:50)
-	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:27)
-	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:41)
-	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:26)
-	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$WithLogging.execute(DefaultCommandLineActionFactory.java:445)
-	at org.gradle.launcher.Main.doAction(Main.java:35)
-	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:52)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:60)
-	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:37)
-	at org.gradle.launcher.GradleMain.main(GradleMain.java:31)
-
+BUILD SUCCESSFUL in 1m
+32 actionable tasks: 32 executed
 
 === VERSIONS DE L’ENVIRONNEMENT ===
 openjdk version "17.0.19" 2026-04-21
@@ -149,8 +130,8 @@ Installed packages:
 
 
 === INFORMATIONS SUR project.zip ===
--rw-r--r-- 1 runner runner 20M Jul 16 07:39 project.zip
-91fec70b851d6fddf0e328e45d11f248f877c7a6bfb5d7cb326028aa36225aa6  project.zip
+-rw-r--r-- 1 runner runner 20M Jul 16 07:51 project.zip
+a3e4ebf36ffd8d618936b4f2b24307153c348e408e56d3f5601d5231484dd421  project.zip
 Archive:  project.zip
     testing: LOCAL_WEB_DIAGNOSTIC.txt   OK
     testing: settings.gradle.kts      OK
@@ -185,12 +166,113 @@ Archive:  project.zip
 No errors detected in compressed data of project.zip.
 
 === ARBORESCENCE DU PROJET GÉNÉRÉ ===
-generated/.github/workflows/build-apk.yml | 9777 octets
+generated/.github/workflows/build-apk.yml | 12141 octets
 generated/.gitignore | 54 octets
+generated/.gradle/8.9/checksums/checksums.lock | 17 octets
+generated/.gradle/8.9/checksums/md5-checksums.bin | 28347 octets
+generated/.gradle/8.9/checksums/sha1-checksums.bin | 41717 octets
+generated/.gradle/8.9/dependencies-accessors/gc.properties | 0 octets
+generated/.gradle/8.9/executionHistory/executionHistory.bin | 93905 octets
+generated/.gradle/8.9/executionHistory/executionHistory.lock | 17 octets
+generated/.gradle/8.9/fileChanges/last-build.bin | 1 octets
+generated/.gradle/8.9/fileHashes/fileHashes.bin | 24347 octets
+generated/.gradle/8.9/fileHashes/fileHashes.lock | 17 octets
+generated/.gradle/8.9/fileHashes/resourceHashesCache.bin | 18769 octets
+generated/.gradle/8.9/gc.properties | 0 octets
+generated/.gradle/buildOutputCleanup/buildOutputCleanup.lock | 17 octets
+generated/.gradle/buildOutputCleanup/cache.properties | 49 octets
+generated/.gradle/buildOutputCleanup/outputFiles.bin | 22169 octets
+generated/.gradle/file-system.probe | 8 octets
+generated/.gradle/vcs-1/gc.properties | 0 octets
 generated/LOCAL_WEB_DIAGNOSTIC.txt | 1065 octets
 generated/README.md | 1233 octets
 generated/SOURCE_INFO.json | 1130 octets
 generated/app/build.gradle.kts | 672 octets
+generated/app/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json | 2 octets
+generated/app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt | 81 octets
+generated/app/build/intermediates/app_metadata/debug/writeDebugAppMetadata/app-metadata.properties | 56 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/README.txt | 1861 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/STYLE_DNA_PRO_METHOD.md | 929 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/ai-expert-knowledge-pack.json | 6657807 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/ai-mix-knowledge-base.json | 6657807 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/android-bridge.js | 956 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/index.html | 6939016 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/manifest.webmanifest | 220 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/sw.js | 519 octets
+generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/validation-report.json | 341 octets
+generated/app/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json | 201 octets
+generated/app/build/intermediates/compile_and_runtime_not_namespaced_r_class_jar/debug/processDebugResources/R.jar | 2312 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/README.txt.jar | 1196 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/STYLE_DNA_PRO_METHOD.md.jar | 723 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/ai-expert-knowledge-pack.json.jar | 887684 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/ai-mix-knowledge-base.json.jar | 887678 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/android-bridge.js.jar | 494 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/index.html.jar | 978435 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/manifest.webmanifest.jar | 312 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/sw.js.jar | 427 octets
+generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/validation-report.json.jar | 381 octets
+generated/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_0/graph.bin | 2377 octets
+generated/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_1/graph.bin | 1448 octets
+generated/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_0b5cf68886673c24cd1af5096d4be77a6aeb08413cbf1566e3ae6c39a2516b65_bucket_0/graph.bin | 235 octets
+generated/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/jar_0b5cf68886673c24cd1af5096d4be77a6aeb08413cbf1566e3ae6c39a2516b65_bucket_1/graph.bin | 235 octets
+generated/app/build/intermediates/dex/debug/mergeProjectDexDebug/0/classes.dex | 1896 octets
+generated/app/build/intermediates/dex/debug/mergeProjectDexDebug/14/classes.dex | 14492 octets
+generated/app/build/intermediates/dex_archive_input_jar_hashes/debug/dexBuilderDebug/out | 411 octets
+generated/app/build/intermediates/dex_number_of_buckets_file/debug/dexBuilderDebug/out | 1 octets
+generated/app/build/intermediates/incremental/debug-mergeJavaRes/merge-state | 478 octets
+generated/app/build/intermediates/incremental/debug/mergeDebugResources/compile-file-map.properties | 1047 octets
+generated/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values-v31/values-v31.xml | 452 octets
+generated/app/build/intermediates/incremental/debug/mergeDebugResources/merged.dir/values/values.xml | 842 octets
+generated/app/build/intermediates/incremental/debug/mergeDebugResources/merger.xml | 4230 octets
+generated/app/build/intermediates/incremental/debug/packageDebugResources/compile-file-map.properties | 1057 octets
+generated/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values-v31/values-v31.xml | 452 octets
+generated/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml | 842 octets
+generated/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml | 4230 octets
+generated/app/build/intermediates/incremental/mergeDebugAssets/merger.xml | 1880 octets
+generated/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml | 476 octets
+generated/app/build/intermediates/incremental/mergeDebugShaders/merger.xml | 476 octets
+generated/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt | 351 octets
+generated/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources | 553 octets
+generated/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0 | 22 octets
+generated/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_ | 68053 octets
+generated/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json | 431 octets
+generated/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt | 147 octets
+generated/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt | 5286 octets
+generated/app/build/intermediates/merged_java_res/debug/mergeDebugJavaResource/base.jar | 22 octets
+generated/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml | 1914 octets
+generated/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml | 1914 octets
+generated/app/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json | 396 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.png.flat | 4740 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.png.flat | 2580 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.png.flat | 8584 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.png.flat | 18192 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.png.flat | 30468 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/values-v31_values-v31.arsc.flat | 588 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat | 964 octets
+generated/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json | 2692 octets
+generated/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values-v31.json | 649 octets
+generated/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/values.json | 2081 octets
+generated/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/single/mergeDebugResources.json | 974 octets
+generated/app/build/intermediates/navigation_json/debug/extractDeepLinksDebug/navigation.json | 2 octets
+generated/app/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt | 15 octets
+generated/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml | 1914 octets
+generated/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json | 398 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher.png | 4607 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher.png | 2445 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher.png | 8445 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher.png | 18053 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher.png | 30329 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/values-v31/values-v31.xml | 452 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml | 842 octets
+generated/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/55bfade0dfbcc2aa04301096fa081de118f3a81bac4eb71e03338a3af25254f9_1.jar | 1044 octets
+generated/app/build/intermediates/runtime_symbol_list/debug/processDebugResources/R.txt | 167 octets
+generated/app/build/intermediates/signing_config_versions/debug/writeDebugSigningConfigVersions/signing-config-versions.json | 96 octets
+generated/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt | 903 octets
+generated/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt | 287 octets
+generated/app/build/outputs/apk/debug/app-debug.apk | 2837906 octets
+generated/app/build/outputs/apk/debug/output-metadata.json | 409 octets
+generated/app/build/outputs/logs/manifest-merger-debug-report.txt | 6233 octets
+generated/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin | 38035 octets
 generated/app/proguard-rules.pro | 36 octets
 generated/app/src/main/AndroidManifest.xml | 1582 octets
 generated/app/src/main/assets/www/README.txt | 1861 octets
@@ -213,7 +295,7 @@ generated/app/src/main/res/values/colors.xml | 161 octets
 generated/app/src/main/res/values/strings.xml | 116 octets
 generated/app/src/main/res/values/styles.xml | 691 octets
 generated/build.gradle.kts | 74 octets
-generated/gradle.properties | 112 octets
+generated/gradle.properties | 101 octets
 generated/settings.gradle.kts | 333 octets
 
 === settings.gradle.kts ===
@@ -273,7 +355,10 @@ android {
 }
 
 === gradle.properties ===
-org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\nandroid.useAndroidX=true\nandroid.nonTransitiveRClass=true\n
+org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8
+org.gradle.daemon=false
+org.gradle.parallel=false
+
 === AndroidManifest.xml ===
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
@@ -307,4 +392,958 @@ org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8\nandroid.useAndroidX=true\nan
     </application>
 </manifest>
 === FICHIERS JAVA ===
-find: missing argument to `-exec'
+--- generated/app/src/main/java/com/yoann/ghostbuilderdev/MainActivity.java ---
+package com.yoann.ghostbuilderdev;
+
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.app.Activity;
+import android.app.DownloadManager;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.net.Uri;
+import android.os.Bundle;
+import android.os.Environment;
+import android.os.VibrationEffect;
+import android.os.Vibrator;
+import android.view.View;
+import android.view.WindowManager;
+import android.webkit.DownloadListener;
+import android.webkit.GeolocationPermissions;
+import android.webkit.JavascriptInterface;
+import android.webkit.PermissionRequest;
+import android.webkit.URLUtil;
+import android.webkit.ValueCallback;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class MainActivity extends Activity {
+    private static final int REQUEST_FILE_CHOOSER = 1001;
+    private static final int REQUEST_LOCATION = 1002;
+    private static final int REQUEST_MEDIA = 1003;
+
+    private static final boolean ENABLE_LOCATION = true;
+    private static final boolean ENABLE_CAMERA = true;
+    private static final boolean ENABLE_MICROPHONE = true;
+    private static final boolean OPEN_EXTERNAL_LINKS = true;
+
+    private WebView webView;
+    private ValueCallback<Uri[]> fileChooserCallback;
+    private String pendingGeoOrigin;
+    private GeolocationPermissions.Callback pendingGeoCallback;
+    private PermissionRequest pendingMediaRequest;
+
+    @SuppressLint({"SetJavaScriptEnabled", "AllowFileAccessFromFileURLs"})
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        
+        getWindow().setStatusBarColor(Color.parseColor("#FF7A1A"));
+        getWindow().setNavigationBarColor(Color.parseColor("#11141B"));
+
+        webView = new WebView(this);
+        setContentView(webView);
+        webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setDomStorageEnabled(true);
+        settings.setDatabaseEnabled(true);
+        settings.setAllowFileAccess(true);
+        settings.setAllowContentAccess(true);
+        settings.setAllowFileAccessFromFileURLs(true);
+        settings.setAllowUniversalAccessFromFileURLs(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+        settings.setSupportMultipleWindows(false);
+        settings.setMediaPlaybackRequiresUserGesture(false);
+        settings.setMixedContentMode(WebSettings.MIXED_CONTENT_NEVER_ALLOW);
+
+        webView.setWebViewClient(new WebViewClient() {
+            private boolean handleUri(Uri uri) {
+                if (uri == null) return false;
+                String scheme = uri.getScheme() == null ? "" : uri.getScheme().toLowerCase();
+                if ("file".equals(scheme) || "about".equals(scheme) || "data".equals(scheme) || "blob".equals(scheme)) {
+                    return false;
+                }
+                if (("http".equals(scheme) || "https".equals(scheme)) && !OPEN_EXTERNAL_LINKS) {
+                    return false;
+                }
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, uri));
+                    return true;
+                } catch (Exception error) {
+                    Toast.makeText(MainActivity.this, "Impossible d’ouvrir ce lien", Toast.LENGTH_SHORT).show();
+                    return true;
+                }
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                return handleUri(request.getUrl());
+            }
+
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                return handleUri(Uri.parse(url));
+            }
+        });
+
+        webView.setWebChromeClient(new WebChromeClient() {
+            @Override
+            public boolean onShowFileChooser(
+                    WebView view,
+                    ValueCallback<Uri[]> callback,
+                    FileChooserParams params
+            ) {
+                if (fileChooserCallback != null) {
+                    fileChooserCallback.onReceiveValue(null);
+                }
+                fileChooserCallback = callback;
+                try {
+                    startActivityForResult(params.createIntent(), REQUEST_FILE_CHOOSER);
+                    return true;
+                } catch (Exception error) {
+                    fileChooserCallback = null;
+                    Toast.makeText(MainActivity.this, "Sélecteur de fichier indisponible", Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            }
+
+            @Override
+            public void onGeolocationPermissionsShowPrompt(
+                    String origin,
+                    GeolocationPermissions.Callback callback
+            ) {
+                if (!ENABLE_LOCATION) {
+                    callback.invoke(origin, false, false);
+                    return;
+                }
+                if (hasLocationPermission()) {
+                    callback.invoke(origin, true, false);
+                    return;
+                }
+                pendingGeoOrigin = origin;
+                pendingGeoCallback = callback;
+                requestPermissions(
+                        new String[]{
+                                Manifest.permission.ACCESS_FINE_LOCATION,
+                                Manifest.permission.ACCESS_COARSE_LOCATION
+                        },
+                        REQUEST_LOCATION
+                );
+            }
+
+            @Override
+            public void onPermissionRequest(PermissionRequest request) {
+                handleMediaPermissionRequest(request);
+            }
+        });
+
+        webView.setDownloadListener(new DownloadListener() {
+            @Override
+            public void onDownloadStart(
+                    String url,
+                    String userAgent,
+                    String contentDisposition,
+                    String mimeType,
+                    long contentLength
+            ) {
+                try {
+                    if (url.startsWith("blob:") || url.startsWith("data:")) {
+                        Toast.makeText(
+                                MainActivity.this,
+                                "Ce téléchargement doit être exporté par une fonction compatible Android.",
+                                Toast.LENGTH_LONG
+                        ).show();
+                        return;
+                    }
+                    DownloadManager.Request download =
+                            new DownloadManager.Request(Uri.parse(url));
+                    String filename =
+                            URLUtil.guessFileName(url, contentDisposition, mimeType);
+                    download.setTitle(filename);
+                    download.setDescription("Téléchargement depuis Mon application");
+                    download.setMimeType(mimeType);
+                    if (userAgent != null) {
+                        download.addRequestHeader("User-Agent", userAgent);
+                    }
+                    download.setNotificationVisibility(
+                            DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED
+                    );
+                    download.setDestinationInExternalPublicDir(
+                            Environment.DIRECTORY_DOWNLOADS,
+                            filename
+                    );
+                    DownloadManager manager =
+                            (DownloadManager) getSystemService(DOWNLOAD_SERVICE);
+                    if (manager != null) manager.enqueue(download);
+                } catch (Exception error) {
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
+                    } catch (Exception ignored) {
+                        Toast.makeText(
+                                MainActivity.this,
+                                "Téléchargement impossible",
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                }
+            }
+        });
+
+        webView.addJavascriptInterface(new NativeBridge(this), "AndroidApp");
+        webView.loadUrl("file:///android_asset/www/index.html");
+    }
+
+    private boolean hasLocationPermission() {
+        return checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED
+                || checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void handleMediaPermissionRequest(PermissionRequest request) {
+        List<String> missing = new ArrayList<>();
+
+        for (String resource : request.getResources()) {
+            if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)
+                    && ENABLE_CAMERA
+                    && checkSelfPermission(Manifest.permission.CAMERA)
+                    != PackageManager.PERMISSION_GRANTED) {
+                missing.add(Manifest.permission.CAMERA);
+            }
+            if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)
+                    && ENABLE_MICROPHONE
+                    && checkSelfPermission(Manifest.permission.RECORD_AUDIO)
+                    != PackageManager.PERMISSION_GRANTED) {
+                missing.add(Manifest.permission.RECORD_AUDIO);
+            }
+        }
+
+        if (!missing.isEmpty()) {
+            pendingMediaRequest = request;
+            requestPermissions(missing.toArray(new String[0]), REQUEST_MEDIA);
+        } else {
+            grantAllowedMedia(request);
+        }
+    }
+
+    private void grantAllowedMedia(PermissionRequest request) {
+        List<String> allowed = new ArrayList<>();
+
+        for (String resource : request.getResources()) {
+            if (PermissionRequest.RESOURCE_VIDEO_CAPTURE.equals(resource)
+                    && ENABLE_CAMERA
+                    && checkSelfPermission(Manifest.permission.CAMERA)
+                    == PackageManager.PERMISSION_GRANTED) {
+                allowed.add(resource);
+            }
+            if (PermissionRequest.RESOURCE_AUDIO_CAPTURE.equals(resource)
+                    && ENABLE_MICROPHONE
+                    && checkSelfPermission(Manifest.permission.RECORD_AUDIO)
+                    == PackageManager.PERMISSION_GRANTED) {
+                allowed.add(resource);
+            }
+        }
+
+        if (allowed.isEmpty()) {
+            request.deny();
+        } else {
+            request.grant(allowed.toArray(new String[0]));
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUEST_FILE_CHOOSER && fileChooserCallback != null) {
+            Uri[] result =
+                    WebChromeClient.FileChooserParams.parseResult(resultCode, data);
+            fileChooserCallback.onReceiveValue(result);
+            fileChooserCallback = null;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(
+            int requestCode,
+            String[] permissions,
+            int[] grantResults
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == REQUEST_LOCATION && pendingGeoCallback != null) {
+            pendingGeoCallback.invoke(
+                    pendingGeoOrigin,
+                    hasLocationPermission(),
+                    false
+            );
+            pendingGeoCallback = null;
+            pendingGeoOrigin = null;
+        }
+
+        if (requestCode == REQUEST_MEDIA && pendingMediaRequest != null) {
+            grantAllowedMedia(pendingMediaRequest);
+            pendingMediaRequest = null;
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (webView != null && webView.canGoBack()) {
+            webView.goBack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        if (webView != null) {
+            webView.removeJavascriptInterface("AndroidApp");
+            webView.stopLoading();
+            webView.destroy();
+            webView = null;
+        }
+        super.onDestroy();
+    }
+
+    public static final class NativeBridge {
+        private final Activity activity;
+
+        NativeBridge(Activity activity) {
+            this.activity = activity;
+        }
+
+        @JavascriptInterface
+        public void showToast(final String message) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Toast.makeText(activity, message, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public void share(final String text) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    intent.setType("text/plain");
+                    intent.putExtra(Intent.EXTRA_TEXT, text);
+                    activity.startActivity(Intent.createChooser(intent, "Partager"));
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public void copyText(final String text) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    ClipboardManager clipboard =
+                            (ClipboardManager) activity.getSystemService(
+                                    Context.CLIPBOARD_SERVICE
+                            );
+                    if (clipboard != null) {
+                        clipboard.setPrimaryClip(
+                                ClipData.newPlainText("Texte", text)
+                        );
+                    }
+                    Toast.makeText(activity, "Copié", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public void vibrate(long milliseconds) {
+            Vibrator vibrator =
+                    (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
+            if (vibrator == null) return;
+
+            long duration = Math.max(1L, Math.min(milliseconds, 2000L));
+            if (android.os.Build.VERSION.SDK_INT >= 26) {
+                vibrator.vibrate(
+                        VibrationEffect.createOneShot(
+                                duration,
+                                VibrationEffect.DEFAULT_AMPLITUDE
+                        )
+                );
+            } else {
+                vibrator.vibrate(duration);
+            }
+        }
+
+        @JavascriptInterface
+        public void openUrl(final String url) {
+            activity.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        activity.startActivity(
+                                new Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                        );
+                    } catch (Exception ignored) {
+                    }
+                }
+            });
+        }
+
+        @JavascriptInterface
+        public String getPackageName() {
+            return activity.getPackageName();
+        }
+    }
+}
+
+=== RESSOURCES XML ANDROID ===
+--- generated/app/src/main/res/values-v31/styles.xml ---
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:statusBarColor">@color/brand_color</item>
+        <item name="android:navigationBarColor">@color/window_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>--- generated/app/src/main/res/values/colors.xml ---
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_color">#FF7A1A</color>
+    <color name="window_background">#11141B</color>
+</resources>--- generated/app/src/main/res/values/strings.xml ---
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Mon application</string>
+</resources>--- generated/app/src/main/res/values/styles.xml ---
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:fontFamily">sans</item>
+        <item name="android:windowActionModeOverlay">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:colorAccent">@color/brand_color</item>
+        <item name="android:statusBarColor">@color/brand_color</item>
+        <item name="android:navigationBarColor">@color/window_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+</resources>
+=== DIAGNOSTIC LOCAL DU PROJET WEB ===
+============================================================
+ DIAGNOSTIC LOCAL DU PROJET WEB
+============================================================
+Date : 2026-07-16T07:51:08.112Z
+Application : Mon application
+Package : com.yoann.ghostbuilderdev
+Fichiers intégrés : 9
+Références HTML analysées : 1
+Ressources externes : 0
+Erreurs détectées : 0
+Avertissements : 1
+
+=== ERREURS ===
+- Aucune erreur locale évidente.
+
+=== AVERTISSEMENTS ===
+- Service Worker détecté : son comportement peut être limité dans une WebView Android locale.
+
+=== INFORMATIONS ===
+- Modules JavaScript ES détectés.
+- Sélecteur de fichier détecté : le pont Android correspondant est activé.
+
+=== INVENTAIRE DES FICHIERS FOURNIS ===
+- index.html
+- ai-expert-knowledge-pack.json
+- ai-mix-knowledge-base.json
+- manifest.webmanifest
+- STYLE_DNA_PRO_METHOD.md
+- README.txt
+- validation-report.json
+- sw.js
+- android-bridge.js
+
+Ce rapport local est complété par latest-diagnostic.txt après la compilation GitHub.
+============================================================
+=== INVENTAIRE DES FICHIERS WEB ===
+generated/app/src/main/assets/www/README.txt | 1861 octets
+generated/app/src/main/assets/www/STYLE_DNA_PRO_METHOD.md | 929 octets
+generated/app/src/main/assets/www/ai-expert-knowledge-pack.json | 6657807 octets
+generated/app/src/main/assets/www/ai-mix-knowledge-base.json | 6657807 octets
+generated/app/src/main/assets/www/android-bridge.js | 956 octets
+generated/app/src/main/assets/www/index.html | 6939016 octets
+generated/app/src/main/assets/www/manifest.webmanifest | 220 octets
+generated/app/src/main/assets/www/sw.js | 519 octets
+generated/app/src/main/assets/www/validation-report.json | 341 octets
+
+=== EXTRAIT DU FICHIER index.html ===
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b14">
+<title>AutoMix Standalone V13.1 Style DNA Pro</title>
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+:root{--bg:#06080e;--panel:#101724;--panel2:#0b111b;--line:#29364c;--text:#f7f9fd;--muted:#93a1b6;--p:#8058ff;--blue:#397cf4;--cyan:#21d6c4;--pink:#ff5da5;--green:#41d99a;--red:#ff657d;--orange:#ff9d51}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;background:radial-gradient(circle at top,#1b2748,#0a0f19 42%,#05070c);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+button,input,select{font:inherit}.app{max-width:1600px;margin:auto;padding:14px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.brand{display:flex;align-items:center;gap:12px}.logo{width:60px;height:60px;border-radius:19px;display:grid;place-items:center;font-weight:900;background:linear-gradient(135deg,var(--p),var(--pink),var(--cyan));box-shadow:0 18px 48px #0009}h1{margin:0;font-size:1.42rem}.sub{color:var(--muted);font-size:.8rem;margin-top:3px}.chip{border:1px solid var(--line);border-radius:999px;padding:8px 11px;background:#0d1420;color:var(--cyan);font-size:.73rem}
+.tabs{display:flex;gap:8px;overflow:auto;margin-bottom:12px}.tab{border:1px solid var(--line);background:#111827;color:#cbd4e2;padding:10px 13px;border-radius:12px;white-space:nowrap;cursor:pointer}.tab.active{border-color:transparent;background:linear-gradient(135deg,var(--p),var(--blue));color:white}
+.view{display:none}.view.active{display:block}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:14px}.panel{background:linear-gradient(180deg,#131b2a,#0d141f);border:1px solid var(--line);border-radius:20px;padding:16px;box-shadow:0 20px 58px #0006}.panel h2{font-size:1rem;margin:0 0 13px}.panel h3{font-size:.88rem;margin:16px 0 9px}
+.drop{display:grid;place-items:center;text-align:center;padding:29px;border:1.5px dashed #465876;border-radius:16px;background:#0a1019;cursor:pointer}.drop.drag{border-color:var(--cyan);background:#102229}.drop strong{display:block}.drop span{display:block;color:var(--muted);font-size:.75rem;margin-top:5px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.btn{border:1px solid #35445e;background:#202b40;color:white;padding:10px 13px;border-radius:11px;font-weight:750;cursor:pointer}.btn.primary{border:0;background:linear-gradient(135deg,var(--p),var(--blue))}.btn.green{border:0;background:linear-gradient(135deg,#20b589,var(--cyan));color:#061714}.btn.pink{border:0;background:linear-gradient(135deg,var(--pink),#ff7856)}.btn.red{background:#3b1d29;color:#ffb1c0}.btn:disabled{opacity:.4;cursor:not-allowed}
+.status{padding:11px;border:1px solid var(--line);border-radius:12px;background:#0a1019;color:var(--muted);font-size:.78rem;margin-top:10px}.status b{color:white}.progress{height:7px;background:#232d3e;border-radius:999px;overflow:hidden;margin-top:8px}.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--p),var(--pink),var(--cyan))}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.card{background:#0a1019;border:1px solid var(--line);border-radius:13px;padding:11px}.card strong{display:block}.card span{font-size:.67rem;color:var(--muted)}
+.list{display:grid;gap:8px;max-height:470px;overflow:auto}.track{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center;padding:10px;border:1px solid var(--line);border-radius:13px;background:#0a1019}.num{width:37px;height:37px;border-radius:10px;background:#202b40;display:grid;place-items:center;color:var(--cyan);font-weight:800}.name{font-weight:760;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.meta{font-size:.7rem;color:var(--muted);margin-top:3px}.actions{display:flex;gap:5px}.icon{width:32px;height:32px;border:0;border-radius:8px;background:#253149;color:white;cursor:pointer}
+.field{margin:10px 0}.field label{display:flex;justify-content:space-between;gap:10px;color:#cfd7e4;font-size:.78rem;margin-bottom:6px}.field input[type=range]{width:100%;accent-color:var(--p)}input[type=text],input[type=number],select{width:100%;padding:10px;border-radius:10px;border:1px solid var(--line);background:#0c1320;color:white}
+.switch{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #222c3c}.switch input{width:19px;height:19px;accent-color:var(--p)}
+.matrix{overflow:auto}.matrix table{width:100%;border-collapse:collapse;font-size:.72rem}.matrix th,.matrix td{border:1px solid var(--line);padding:8px;text-align:center}.matrix th{background:#171f2e}.good{background:#143329}.mid{background:#342b16}.bad{background:#351923}
+.plan{display:grid;gap:9px;max-height:680px;overflow:auto}.scene{padding:12px;border:1px solid var(--line);border-radius:14px;background:#0a1019}.scene-head{display:flex;justify-content:space-between;gap:10px}.scene-title{font-weight:800}.scene-meta{font-size:.7rem;color:var(--muted);margin-top:4px}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}.tag{padding:5px 8px;border-radius:999px;background:#202b40;font-size:.66rem}.tag.lead{background:#3a2458}.tag.rhythm{background:#153d38}.tag.support{background:#3d2d18}.bar{height:8px;background:#252e3f;border-radius:999px;overflow:hidden;margin-top:9px}.bar div{height:100%;background:linear-gradient(90deg,var(--p),var(--pink),var(--cyan))}
+.timelineWrap{overflow:auto}.ruler{min-width:1100px;display:flex;justify-content:space-between;color:var(--muted);font-size:.72rem;margin-bottom:8px}.lane{min-width:1100px;height:82px;border:1px solid var(--line);border-radius:10px;background:repeating-linear-gradient(90deg,#151d2a 0,#151d2a 99px,#283247 100px);margin:8px 0;padding:8px;position:relative}.lane.small{height:54px}.clip{position:absolute;top:8px;bottom:8px;border-radius:8px;background:linear-gradient(135deg,#653fd9,#3978df);padding:7px;font-size:.66rem;overflow:hidden;touch-action:none}.clip.alt{background:linear-gradient(135deg,#19977c,#23c2b0)}.clip.dark{background:linear-gradient(135deg,#7c285c,#b33a5c)}.marker{position:absolute;top:0;bottom:0;width:2px;background:#ffcf5a}
+.presetGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.preset{padding:13px;border:1px solid var(--line);border-radius:14px;background:#0a1019;cursor:pointer}.preset.active{border-color:var(--pink);background:linear-gradient(135deg,#241936,#12232c)}.preset strong{display:block}.preset span{display:block;color:var(--muted);font-size:.71rem;margin-top:5px}
+.notice{padding:10px;border:1px solid #59451e;background:#2a2415;border-radius:12px;color:#ead8a5;font-size:.73rem}.empty{text-align:center;padding:22px;color:var(--muted)}.two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.wave{height:100px;border:1px solid var(--line);border-radius:12px;background:#080d15;width:100%}
+.report{display:grid;gap:7px}.report div{display:flex;justify-content:space-between;border-bottom:1px solid #222c3c;padding:8px 0;font-size:.78rem}.warn{color:#ffcf72}.ok{color:var(--green)}
+footer{text-align:center;color:#68768c;font-size:.7rem;padding:16px}
+
+
+.durationPresets{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0 12px}
+.durationPreset{border:1px solid var(--line);background:#182235;color:#dfe7f4;border-radius:999px;padding:7px 10px;font-size:.7rem;font-weight:750;cursor:pointer}
+.durationPreset.active{border-color:transparent;background:linear-gradient(135deg,var(--p),var(--blue));color:white}
+
+.compatControls{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.compatResults{display:grid;gap:10px;margin-top:12px;max-height:620px;overflow:auto}
+.compatGroup{border:1px solid var(--line);background:#0a1019;border-radius:14px;padding:12px}
+.compatGroup.best{border-color:var(--cyan);box-shadow:0 0 0 1px #21d6c433 inset}
+.compatHead{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.compatScore{font-size:1.2rem;font-weight:900;color:var(--cyan)}
+.compatNames{font-weight:800;line-height:1.35}
+.compatDetails{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:9px}
+.compatMetric{background:#151d2a;border-radius:9px;padding:8px;text-align:center}
+.compatMetric b{display:block;font-size:.82rem}.compatMetric span{display:block;color:var(--muted);font-size:.62rem;margin-top:2px}
+.compatPairs{display:flex;gap:5px;flex-wrap:wrap;margin-top:9px}
+.pairPill{padding:5px 7px;border-radius:999px;font-size:.62rem;background:#202b40}
+.compatFooter{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-top:10px}
+.compatHint{font-size:.68rem;color:var(--muted)}
+@media(max-width:700px){.compatControls{grid-template-columns:1fr}.compatDetails{grid-template-columns:1fr 1fr}}
+
+
+.proGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.prepStats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.prepStat{padding:10px;border:1px solid var(--line);border-radius:12px;background:#0a1019;text-align:center}
+.prepStat b{display:block;font-size:1rem}.prepStat span{color:var(--muted);font-size:.64rem}
+.wavePro{display:block;width:100%;height:150px;border:1px solid var(--line);border-radius:13px;background:#070c14;touch-action:none}
+.waveSmall{display:block;width:100%;height:92px;border:1px solid var(--line);border-radius:11px;background:#070c14}
+.transport{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.transport .time{margin-left:auto;font-variant-numeric:tabular-nums;color:var(--cyan);font-weight:800}
+.hotGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.hotPad{min-height:60px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(145deg,#202a40,#111827);color:white;padding:8px;cursor:pointer;text-align:left}
+.hotPad.active{outline:2px solid var(--cyan)}.hotPad.empty{opacity:.5}
+.hotPad b{display:block;font-size:.75rem}.hotPad span{display:block;color:#aebbd0;font-size:.64rem;margin-top:3px}
+.phraseList{display:grid;gap:8px;max-height:450px;overflow:auto}
+.phraseRow{display:grid;grid-template-columns:1.25fr .7fr .7fr .7fr auto;gap:7px;align-items:center;padding:8px;border:1px solid var(--line);border-radius:11px;background:#0a1019}
+.phraseRow input,.phraseRow select{padding:8px}
+.deckGrid{display:grid;grid-template-columns:1fr 310px 1fr;gap:12px;align-items:start}
+.deck{border:1px solid var(--line);border-radius:18px;padding:13px;background:linear-gradient(180deg,#151e2d,#0b111b)}
+.deck.a{box-shadow:inset 0 3px 0 #7b5cff}.deck.b{box-shadow:inset 0 3px 0 #20cfbd}
+.deckTitle{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:9px}
+.deckTitle strong{font-size:1.05rem}.deckReadout{color:var(--cyan);font-variant-numeric:tabular-nums}
+.deckControls{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:10px}
+.knobRow{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
+.knob{padding:8px;border:1px solid var(--line);border-radius:11px;background:#0a1019}
+.knob label{display:flex;justify-content:space-between;color:var(--muted);font-size:.65rem;margin-bottom:4px}
+.knob input{width:100%;accent-color:var(--p)}
+.mixer{position:sticky;top:10px;border:1px solid var(--line);border-radius:18px;padding:13px;background:#090f19}
+.mixer h3{text-align:center;margin:0 0 10px}
+.crossWrap{padding:12px 0}.crossLabels{display:flex;justify-content:space-between;font-weight:900;color:var(--muted)}
+.crossWrap input{width:100%;accent-color:var(--pink)}
+.scoreRing{width:106px;height:106px;border-radius:50%;margin:12px auto;display:grid;place-items:center;background:conic-gradient(var(--cyan) var(--score,0%),#232d3e 0);position:relative}
+.scoreRing:after{content:"";position:absolute;inset:9px;border-radius:50%;background:#0a1019}
+.scoreRing b{position:relative;z-index:1;font-size:1.3rem}
+.advice{padding:10px;border:1px solid var(--line);border-radius:11px;background:#0a1019;font-size:.72rem;color:#c8d2e2;line-height:1.45}
+.recording{color:#ff7187;animation:pulse 1s infinite}@keyframes pulse{50%{opacity:.45}}
+.djCueGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:8px}
+.djCue{border:1px solid var(--line);border-radius:8px;background:#202b40;color:white;padding:7px 3px;font-size:.62rem;cursor:pointer}
+.miniBadge{display:inline-block;padding:4px 7px;border-radius:999px;background:#202b40;color:#cbd5e5;font-size:.62rem}
+.qcList{display:grid;gap:7px}.qcItem{display:flex;justify-content:space-between;gap:8px;padding:9px;border-bottom:1px solid #222c3c;font-size:.75rem}
+.qcItem.good b{color:var(--green)}.qcItem.warn b{color:#ffcf72}.qcItem.bad b{color:var(--red)}
+
+.radioHero{display:grid;grid-template-columns:1.08fr .92fr;gap:14px}
+.radioStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.radioStat{padding:11px;border:1px solid var(--line);border-radius:13px;background:#0a1019;text-align:center}
+.radioStat b{display:block;font-size:1.05rem;color:var(--cyan)}.radioStat span{display:block;color:var(--muted);font-size:.63rem;margin-top:3px}
+.radioPlan{display:grid;gap:8px;max-height:690px;overflow:auto}
+.radioItem{position:relative;border:1px solid var(--line);border-radius:13px;background:#0a1019;padding:11px 11px 11px 15px;overflow:hidden}
+.radioItem:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--p),var(--cyan))}
+.radioItem.playing{border-color:var(--cyan);box-shadow:0 0 0 1px #21d6c433 inset}
+.radioItemHead{display:flex;justify-content:space-between;gap:10px}
+.radioItemTitle{font-weight:850;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.radioItemMeta{color:var(--muted);font-size:.68rem;margin-top:4px;line-height:1.4}
+.radioTransition{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}
+.radioBadge{padding:5px 7px;border-radius:999px;background:#202b40;font-size:.62rem}
+.radioBadge.score{background:#153d38;color:#aef1df}
+.radioNow{border:1px solid #2e5261;border-radius:15px;background:linear-gradient(135deg,#0f2028,#111827);padding:13px;margin-top:11px}
+.radioNowTitle{font-size:1rem;font-weight:900}.radioNowMeta{font-size:.7rem;color:var(--muted);margin-top:4px}
+.radioProgress{height:9px;background:#263043;border-radius:999px;overflow:hidden;margin-top:10px}
+.radioProgress div{height:100%;width:0;background:linear-gradient(90deg,var(--p),var(--pink),var(--cyan))}
+.radioQuick{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.radioQuick button{border:1px solid var(--line);background:#182235;color:white;padding:7px 9px;border-radius:999px;font-size:.67rem;cursor:pointer}
+.radioQuick button.active{border-color:transparent;background:linear-gradient(135deg,var(--p),var(--blue))}
+.radioQuality{display:grid;gap:7px;margin-top:10px}
+.radioQualityLine{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #222c3c;font-size:.73rem}
+.radioQualityLine b.good{color:var(--green)}.radioQualityLine b.warn{color:#ffcf72}.radioQualityLine b.bad{color:var(--red)}
+
+.remixGrid{display:grid;grid-template-columns:1.02fr .98fr;gap:14px}
+.remixStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.remixStat{background:#0a1019;border:1px solid var(--line);border-radius:13px;padding:11px;text-align:center}
+.remixStat b{display:block;color:var(--cyan);font-size:1.05rem}.remixStat span{display:block;color:var(--muted);font-size:.62rem;margin-top:3px}
+.remixVariants{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;margin-top:10px}
+.remixVariant{border:1px solid var(--line);background:#0a1019;border-radius:13px;padding:11px;cursor:pointer;color:white;text-align:left}
+.remixVariant.active{border-color:var(--cyan);box-shadow:0 0 0 1px #21d6c433 inset}
+.remixVariant b{display:block}.remixVariant span{display:block;color:var(--muted);font-size:.65rem;margin-top:4px}
+.remixPlan{display:grid;gap:8px;max-height:680px;overflow:auto}
+.remixScene{border:1px solid var(--line);border-radius:13px;background:#0a1019;padding:11px;position:relative;overflow:hidden}
+.remixScene:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--pink),var(--p))}
+.remixSceneHead{display:flex;justify-content:space-between;gap:10px}.remixSceneTitle{font-weight:850}.remixSceneMeta{font-size:.67rem;color:var(--muted);margin-top:4px}
+.remixFx{display:flex;gap:5px;flex-wrap:wrap;margin-top:7px}.remixFx span{padding:5px 7px;border-radius:999px;background:#202b40;font-size:.62rem}.remixFx span.hot{background:#48233c;color:#ffb7d5}
+.remixQuality{display:grid;gap:7px;margin-top:11px}.remixQualityLine{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #222c3c;padding:8px 0;font-size:.74rem}
+.remixProfileCards{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}.remixProfile{border:1px solid var(--line);background:#0a1019;color:white;border-radius:12px;padding:10px;text-align:left;cursor:pointer}
+.remixProfile.active{border-color:var(--pink);background:linear-gradient(135deg,#241936,#12232c)}.remixProfile b{display:block}.remixProfile span{display:block;color:var(--muted);font-size:.64rem;margin-top:4px}
+
+.aiHero{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.aiBanner{padding:13px;border:1px solid #315066;border-radius:14px;background:linear-gradient(135deg,#102531,#161a31);font-size:.75rem;line-height:1.5}
+.aiStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.aiStat{padding:11px;border:1px solid var(--line);border-radius:13px;background:#0a1019;text-align:center}
+.aiStat b{display:block;color:var(--cyan);font-size:1.05rem}.aiStat span{display:block;color:var(--muted);font-size:.62rem;margin-top:3px}
+.aiProfiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.aiProfile{border:1px solid var(--line);border-radius:12px;background:#0a1019;color:white;padding:10px;text-align:left;cursor:pointer}
+.aiProfile.active{border-color:var(--cyan);background:linear-gradient(135deg,#10252a,#1b1838)}
+.aiProfile b{display:block}.aiProfile span{display:block;color:var(--muted);font-size:.64rem;margin-top:4px}
+.aiPlan{display:grid;gap:8px;max-height:650px;overflow:auto}
+.aiTransition{border:1px solid var(--line);border-radius:13px;background:#0a1019;padding:11px;position:relative;overflow:hidden}
+.aiTransition:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--cyan),var(--p))}
+.aiTransitionHead{display:flex;justify-content:space-between;gap:10px}
+.aiTransitionTitle{font-weight:850}.aiTransitionMeta{font-size:.67rem;color:var(--muted);margin-top:4px;line-height:1.4}
+.aiReasons{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.aiReason{padding:5px 7px;border-radius:999px;background:#202b40;font-size:.62rem}
+.aiReason.good{background:#153d38;color:#b7f2e0}.aiReason.warn{background:#3c2d18;color:#ffe0a7}
+.aiFeedback{display:flex;gap:7px;margin-top:9px}
+.aiVote{border:1px solid var(--line);border-radius:9px;background:#1a2437;color:white;padding:7px 10px;cursor:pointer}
+.aiVote.liked{border-color:var(--green);color:var(--green)}.aiVote.disliked{border-color:var(--red);color:#ff9caf}
+.aiModel{display:grid;gap:7px;margin-top:10px}
+.aiWeight{display:grid;grid-template-columns:90px 1fr 48px;gap:8px;align-items:center;font-size:.68rem}
+.aiWeightBar{height:7px;background:#273247;border-radius:999px;overflow:hidden}
+.aiWeightBar div{height:100%;background:linear-gradient(90deg,var(--p),var(--cyan))}
+.aiCandidates{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0}
+.aiCandidate{border:1px solid var(--line);border-radius:11px;background:#0a1019;color:white;padding:9px;cursor:pointer}
+.aiCandidate.active{border-color:var(--cyan)}.aiCandidate b{display:block}.aiCandidate span{font-size:.62rem;color:var(--muted)}
+
+
+.styleProStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.styleProStat{padding:10px;border:1px solid var(--line);border-radius:12px;background:#0a1019;text-align:center}
+.styleProStat b{display:block;color:var(--cyan);font-size:1rem}.styleProStat span{display:block;color:var(--muted);font-size:.61rem;margin-top:3px}
+.styleFamilyList{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:8px}
+.styleFamily{border:1px solid var(--line);border-radius:11px;background:#0a1019;padding:9px}
+.styleFamily div{display:flex;justify-content:space-between;gap:8px;font-size:.7rem}.styleFamily span{color:var(--muted);font-size:.62rem}
+.styleMatch{cursor:pointer}.styleMatch.selected{border-color:var(--pink);box-shadow:0 0 0 1px #ff5da544 inset}
+.styleDiagnostics{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin:9px 0}
+.styleDiagnostic{padding:9px;border:1px solid var(--line);border-radius:11px;background:#0a1019}
+.styleDiagnostic b{display:block;font-size:.8rem}.styleDiagnostic span{color:var(--muted);font-size:.61rem}
+.styleHitGrid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:9px 0}
+.styleHit{padding:9px;border:1px solid var(--line);border-radius:11px;background:#0a1019;text-align:center}
+.styleHit b{display:block;color:var(--pink);font-size:.9rem}.styleHit span{color:var(--muted);font-size:.58rem}
+.styleCurveCanvas{width:100%;height:125px;border:1px solid var(--line);border-radius:12px;background:#070c14}
+.styleProfileTools{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:end}
+.styleValidation{padding:10px;border:1px solid #315066;border-radius:12px;background:#10202b;font-size:.7rem;color:#cceaf1;line-height:1.45}
+.styleSaved small{display:block;color:var(--muted);font-size:.58rem;margin-top:3px}
+@media(max-width:650px){.styleProStats,.styleHitGrid{grid-template-columns:1fr 1fr}.styleFamilyList,.styleDiagnostics{grid-template-columns:1fr}.styleProfileTools{grid-template-columns:1fr}}
+
+.styleHero{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.kbStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.kbStat{border:1px solid var(--line);border-radius:12px;background:#0a1019;padding:10px;text-align:center}.kbStat b{display:block;color:var(--cyan);font-size:1rem}.kbStat span{display:block;color:var(--muted);font-size:.61rem;margin-top:3px}
+.styleTop{display:grid;gap:8px;margin-top:10px}.styleMatch{border:1px solid var(--line);border-radius:12px;background:#0a1019;padding:10px}.styleMatch.active{border-color:var(--cyan)}
+.styleMatchHead{display:flex;justify-content:space-between;gap:8px}.styleMatch b{font-size:.82rem}.styleMatch span{color:var(--muted);font-size:.65rem}
+.styleVector{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-top:10px}.styleDim{display:grid;grid-template-columns:84px 1fr 34px;gap:6px;align-items:center;font-size:.64rem}.styleDimBar{height:6px;background:#263147;border-radius:999px;overflow:hidden}.styleDimBar div{height:100%;background:linear-gradient(90deg,var(--pink),var(--cyan))}
+.styleActive{border:1px solid #315b59;background:linear-gradient(135deg,#112a29,#15172d);border-radius:14px;padding:12px;margin:10px 0}.styleActive h3{margin:0 0 5px}.styleActive p{margin:0;color:var(--muted);font-size:.7rem;line-height:1.45}
+.styleProfiles{display:grid;gap:8px;max-height:360px;overflow:auto}.styleSaved{border:1px solid var(--line);border-radius:11px;background:#0a1019;padding:9px;display:grid;grid-template-columns:1fr auto;gap:8px}.styleSaved b{display:block}.styleSaved span{color:var(--muted);font-size:.63rem}
+.styleBrowser{display:grid;gap:7px;max-height:420px;overflow:auto}.styleBrowseItem{border:1px solid var(--line);border-radius:10px;padding:8px;background:#0a1019}.styleBrowseItem b{display:block}.styleBrowseItem span{font-size:.62rem;color:var(--muted)}
+
+.expertHero{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.expertBanner{padding:13px;border:1px solid #315066;border-radius:14px;background:linear-gradient(135deg,#102531,#1a1835);font-size:.75rem;line-height:1.5}
+.expertStats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:10px 0}
+.expertStat{padding:11px;border:1px solid var(--line);border-radius:13px;background:#0a1019;text-align:center}
+.expertStat b{display:block;color:var(--cyan);font-size:1.05rem}.expertStat span{display:block;color:var(--muted);font-size:.62rem;margin-top:3px}
+.expertModes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.expertMode{border:1px solid var(--line);background:#0a1019;color:white;border-radius:12px;padding:10px;text-align:left;cursor:pointer}
+.expertMode.active{border-color:var(--cyan);background:linear-gradient(135deg,#10252a,#20193b)}
+.expertMode b{display:block}.expertMode span{display:block;color:var(--muted);font-size:.62rem;margin-top:4px}
+.expertCandidates{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin:10px 0}
+.expertCandidate{border:1px solid var(--line);background:#0a1019;color:white;border-radius:12px;padding:9px;text-align:left;cursor:pointer}
+.expertCandidate.active{border-color:var(--cyan)}.expertCandidate b{display:block}.expertCandidate span{color:var(--muted);font-size:.62rem}
+.expertCouncil{display:grid;gap:7px}
+.expertAgent{display:grid;grid-template-columns:125px 1fr 42px;gap:8px;align-items:center;font-size:.68rem}
+.expertAgentBar{height:7px;background:#273247;border-radius:999px;overflow:hidden}
+.expertAgentBar div{height:100%;background:linear-gradient(90deg,var(--p),var(--cyan))}
+.expertReport{display:grid;gap:8px;max-height:650px;overflow:auto}
+.expertTransition{border:1px solid var(--line);border-radius:13px;background:#0a1019;padding:11px;position:relative;overflow:hidden}
+.expertTransition:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(var(--cyan),var(--pink))}
+.expertTransitionHead{display:flex;justify-content:space-between;gap:10px}
+.expertTransitionTitle{font-weight:850}.expertTransitionMeta{font-size:.67rem;color:var(--muted);margin-top:4px;line-height:1.4}
+.expertBadges{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.expertBadge{padding:5px 7px;border-radius:999px;background:#202b40;font-size:.62rem}
+.expertBadge.good{background:#153d38;color:#b8f4e2}.expertBadge.warn{background:#3d2e18;color:#ffe0a7}.expertBadge.bad{background:#3b1d29;color:#ffb7c4}
+.expertRepair{padding:8px;border-radius:10px;background:#12262b;color:#b8f4e2;font-size:.67rem;margin-top:8px}
+@media(max-width:1000px){.expertHero{grid-template-columns:1fr}}
+@media(max-width:650px){.expertStats{grid-template-columns:1fr 1fr}.expertModes,.expertCandidates{grid-template-columns:1fr}}
+
+@media(max-width:1000px){.styleHero{grid-template-columns:1fr}}@media(max-width:650px){.kbStats{grid-template-columns:1fr 1fr}.styleVector{grid-template-columns:1fr}}
+
+@media(max-width:1000px){.aiHero{grid-template-columns:1fr}}
+@media(max-width:650px){.aiStats{grid-template-columns:1fr 1fr}.aiProfiles,.aiCandidates{grid-template-columns:1fr}}
+
+@media(max-width:1000px){.remixGrid{grid-template-columns:1fr}}@media(max-width:650px){.remixStats{grid-template-columns:1fr 1fr}.remixVariants,.remixProfileCards{grid-template-columns:1fr}}
+
+@media(max-width:1000px){.radioHero{grid-template-columns:1fr}}
+@media(max-width:650px){.radioStats{grid-template-columns:1fr 1fr}}
+
+@media(max-width:1050px){.deckGrid{grid-template-columns:1fr}.mixer{position:static}.proGrid{grid-template-columns:1fr}}
+@media(max-width:700px){.phraseRow{grid-template-columns:1fr 1fr}.phraseRow button{grid-column:2}.hotGrid{grid-template-columns:repeat(2,1fr)}.prepStats{grid-template-columns:1fr 1fr 1fr}}
+
+@media(max-width:950px){.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr 1fr}.presetGrid{grid-template-columns:1fr}.app{padding:10px}.chip{display:none}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<div class="top"><div class="brand"><div class="logo">13.1</div><div><h1>AutoMix Standalone</h1><div class="sub">Style DNA Pro multi-échelle, conseil d’experts IA et AutoMix local</div></div></div><div class="chip" id="globalState">Prêt</div></div>
+
+<div class="tabs">
+<button class="tab active" data-view="library">Bibliothèque</button>
+<button class="tab" data-view="analysis">Analyse</button>
+<button class="tab" data-view="ai">IA locale</button>
+<button class="tab" data-view="expertAI">IA Expert</button>
+<button class="tab" data-view="styleDNA">Style DNA</button>
+<button class="tab" data-view="prep">Préparation DJ</button>
+<button class="tab" data-view="studio">Studio DJ</button>
+<button class="tab" data-view="radio">Radio DJ</button>
+<button class="tab" data-view="remix">Remix automatique</button>
+<button class="tab" data-view="planner">Planificateur</button>
+<button class="tab" data-view="timeline">Timeline</button>
+<button class="tab" data-view="render">Rendu</button>
+<button class="tab" data-view="project">Projet</button>
+</div>
+
+<section class="view active" id="library">
+<div class="grid">
+<div class="panel">
+<h2>Bibliothèque audio</h2>
+<label class="drop" id="drop"><strong>Importer plusieurs morceaux</strong><span>MP3, WAV, FLAC, M4A, AAC ou OGG — fichiers locaux uniquement</span><input id="files" type="file" accept="audio/*" multiple hidden></label>
+<div class="toolbar"><button class="btn primary" id="add">Ajouter</button><button class="btn" id="reconnect">Reconnecter les fichiers</button><button class="btn red" id="clear" disabled>Tout supprimer</button></div>
+<div class="list" id="trackList"><div class="empty">Aucun morceau chargé.</div></div>
+</div>
+<div class="panel">
+<h2>Résumé</h2>
+<div class="cards">
+<div class="card"><strong id="count">0</strong><span>morceaux</span></div>
+<div class="card"><strong id="analysed">0</strong><span>analysés</span></div>
+<div class="card"><strong id="avgBpm">—</strong><span>BPM moyen</span></div>
+<div class="card"><strong id="version">v001</strong><span>version stable</span></div>
+</div>
+<div class="status" id="libraryStatus"><b>Prêt.</b><br>Ajoute tes fichiers puis lance l’analyse.<div class="progress"><div></div></div></div>
+<div class="switch"><span>Empêcher les doublons</span><input id="dedupe" type="checkbox" checked></div>
+<div class="switch"><span>Calculer une empreinte SHA-256 complète sous 64 Mo</span><input id="fullHash" type="checkbox" checked></div>
+<div class="switch"><span>Conserver les buffers décodés si la mémoire le permet</span><input id="keepDecoded" type="checkbox"></div>
+<div class="notice">Les fichiers audio eux-mêmes ne sont pas copiés dans la sauvegarde. Après fermeture, l’application restaure le projet puis te demande de reconnecter les fichiers.</div>
+</div>
+</div>
+</section>
+
+<section class="view" id="analysis">
+<div class="grid">
+<div class="panel">
+<h2>Analyse musicale locale</h2>
+<div class="field"><label><span>Qualité d’analyse</span></label><select id="analysisQuality"><option value="fast">Rapide</option><option value="balanced" selected>Équilibrée</option><option value="deep">Approfondie</option></select></div>
+<div class="field"><label><span>Limite de décodage automatique</span><b id="decodeLabel">100 Mo</b></label><input id="decodeLimit" type="range" min="20" max="250" value="100"></div>
+<div class="switch"><span>Détecter tempo et grille</span><input id="anTempo" type="checkbox" checked></div>
+<div class="switch"><span>Estimer tonalité et mode</span><input id="anKey" type="checkbox" checked></div>
+<div class="switch"><span>Segmenter en phrases musicales</span><input id="anSections" type="checkbox" checked></div>
+<div class="switch"><span>Estimer voix, basses et percussions</span><input id="anRoles" type="checkbox" checked></div>
+<div class="toolbar"><button class="btn green" id="analyzeSelected" disabled>Analyser les morceaux cochés</button><button class="btn" id="analyzeAll" disabled>Analyser tout</button><button class="btn red" id="cancelAnalysis" disabled>Annuler</button></div>
+<div class="status" id="analysisStatus"><b>En attente.</b><br>Le calcul est effectué dans un Web Worker pour ne pas bloquer l’interface.<div class="progress"><div></div></div></div>
+</div>
+<div class="panel">
+<h2>Matrice de compatibilité</h2>
+<div class="matrix" id="matrix"><div class="empty">Analyse au moins deux morceaux.</div></div>
+
+<h3>Sélecteur intelligent de morceaux</h3>
+<div class="compatControls">
+<div class="field"><label><span>Nombre de morceaux à retenir</span></label><select id="compatGroupSize"><option value="2">2 morceaux</option><option value="3" selected>3 morceaux</option><option value="4">4 morceaux</option><option value="5">5 morceaux</option><option value="6">6 morceaux</option><option value="8">8 morceaux</option><option value="10">10 morceaux</option></select></div>
+<div class="field"><label><span>Score minimal par paire</span></label><select id="compatMinPair"><option value="0">Aucun minimum</option><option value="50">50 %</option><option value="60" selected>60 %</option><option value="70">70 %</option><option value="80">80 %</option></select></div>
+<div class="field"><label><span>Stratégie</span></label><select id="compatStrategy"><option value="balanced" selected>Équilibrée</option><option value="harmonic">Priorité harmonie</option><option value="rhythmic">Priorité rythme</option><option value="energy">Priorité énergie</option><option value="safe">Très sûre</option><option value="creative">Créative</option></select></div>
+</div>
+<div class="switch"><span>Inclure uniquement les morceaux cochés</span><input id="compatSelectedOnly" type="checkbox"></div>
+<div class="switch"><span>Éviter les groupes avec une paire faible</span><input id="compatAvoidWeak" type="checkbox" checked></div>
+<div class="toolbar"><button class="btn green" id="findCompatible" disabled>Trouver les meilleurs groupes</button><button class="btn" id="autoSelectCompatible" disabled>Sélectionner automatiquement le meilleur groupe</button></div>
+<div class="status" id="compatStatus"><b>En attente.</b><br>Analyse au moins deux morceaux pour comparer leurs compatibilités.<div class="progress"><div></div></div></div>
+<div class="compatResults" id="compatResults"><div class="empty">Aucun groupe calculé.</div></div>
+
+<h3>Principes du score</h3>
+<div class="report">
+<div><span>Harmonie</span><b>20 %</b></div><div><span>Rythme et grille</span><b>20 %</b></div><div><span>Structure et phrases</span><b>18 %</b></div><div><span>Énergie</span><b>15 %</b></div><div><span>Collision vocale</span><b>10 %</b></div><div><span>Timbre et spectre</span><b>7 %</b></div><div><span>Qualité locale</span><b>5 %</b></div><div><span>Originalité</span><b>5 %</b></div>
+</div>
+</div>
+</div>
+</section>
+
+
+
+<section class="view" id="ai">
+<div class="aiHero">
+<div class="panel">
+<h2>Assistant IA local — mode simple</h2>
+<div class="aiBanner"><b>Une seule action suffit :</b> l’assistant analyse les morceaux, construit plusieurs mixtapes complètes, évalue leurs transitions et conserve la meilleure. Tes votes améliorent progressivement ses choix, uniquement sur cet appareil.</div>
+
+<h3>Quel résultat recherches-tu ?</h3>
+<div class="aiProfiles">
+<button type="button" class="aiProfile active" data-ai-goal="smooth"><b>Très fluide</b><span>Transitions discrètes, harmonie et énergie progressive</span></button>
+<button type="button" class="aiProfile" data-ai-goal="balanced"><b>Équilibré</b><span>Bon compromis entre rythme, harmonie et variété</span></button>
+<button type="button" class="aiProfile" data-ai-goal="club"><b>Club</b><span>Tempo, groove, bass swaps et changements de phrase</span></button>
+<button type="button" class="aiProfile" data-ai-goal="vocal"><b>Vocal propre</b><span>Évite les doubles voix et protège les refrains</span></button>
+<button type="button" class="aiProfile" data-ai-goal="creative"><b>Créatif</b><span>Contrastes maîtrisés et associations moins évidentes</span></button>
+<button type="button" class="aiProfile" data-ai-goal="calm"><b>Apaisé</b><span>Passages longs, faible variation d’énergie et fondus doux</span></button>
+</div>
+<input id="aiGoal" type="hidden" value="smooth">
+
+<div class="field"><label><span>Durée de la mixtape IA</span><b id="aiDurationLabel">30 min</b></label><input id="aiDuration" type="range" min="0.5" max="120" step="0.5" value="30"></div>
+<div class="radioQuick">
+<button type="button" data-ai-duration="0.5">30 s</button>
+<button type="button" data-ai-duration="2">2 min</button>
+<button type="button" data-ai-duration="10">10 min</button>
+<button type="button" class="active" data-ai-duration="30">30 min</button>
+<button type="button" data-ai-duration="60">1 h</button>
+<button type="button" data-ai-duration="90">1 h 30</button>
+<button type="button" data-ai-duration="120">2 h</button>
+</div>
+
+<div class="field"><label><span>Nombre de plans comparés</span><b id="aiCandidatesLabel">20</b></label><input id="aiCandidateCount" type="range" min="6" max="40" step="2" value="20"></div>
+<div class="field"><label><span>Créativité contrôlée</span><b id="aiNoveltyLabel">35 %</b></label><input id="aiNovelty" type="range" min="0" max="100" value="35"></div>
+<div class="field"><label><span>Durée continue maximale d’un morceau</span><b id="aiMaxContinuousLabel">120 s</b></label><input id="aiMaxContinuous" type="range" min="20" max="240" step="5" value="120"></div>
+
+<div class="switch"><span>Utiliser toute la bibliothèque</span><input id="aiWholeLibrary" type="checkbox" checked></div>
+<div class="switch"><span>Analyser automatiquement les titres manquants</span><input id="aiAutoAnalyze" type="checkbox" checked></div>
+<div class="switch"><span>Appliquer automatiquement le plan retenu</span><input id="aiAutoApply" type="checkbox" checked></div>
+
+<div class="toolbar">
+<button class="btn green" id="aiCreate">Créer avec l’IA</button>
+<button class="btn" id="aiRecreate" disabled>Créer une autre proposition</button>
+<button class="btn red" id="aiResetLearning">Réinitialiser l’apprentissage</button>
+</div>
+<div class="toolbar">
+<button class="btn primary" id="aiPreview" disabled>Prévisualiser 45 s</button>
+<button class="btn" id="aiTimeline" disabled>Ouvrir la timeline</button>
+<button class="btn pink" id="aiRender" disabled>Ouvrir le rendu</button>
+</div>
+
+<div class="status" id="aiStatus"><b>IA prête.</b><br>Aucun compte, aucune API et aucun envoi de musique. Le modèle apprend localement à partir de tes votes.<div class="progress"><div></div></div></div>
+</div>
+
+<div class="panel">
+<h2>Décision de l’IA</h2>
+<div class="aiStats">
+<div class="aiStat"><b id="aiPlanScore">—</b><span>score du plan</span></div>
+<div class="aiStat"><b id="aiConfidence">—</b><span>confiance IA</span></div>
+<div class="aiStat"><b id="aiFeedbackCount">0</b><span>avis appris</span></div>
+<div class="aiStat"><b id="aiTransitionCount">—</b><span>transitions</span></div>
+</div>
+
+<div class="aiCandidates" id="aiCandidateList"></div>
+
+<h3>Ce que l’IA privilégie actuellement</h3>
+<div class="aiModel" id="aiModelWeights"></div>
+
+<h3>Explication des transitions</h3>
+<div class="aiPlan" id="aiPlanList"><div class="empty">Aucun plan IA généré.</div></div>
+</div>
+</div>
+</section>
+
+
+
+<section class="view" id="expertAI">
+<div class="expertHero">
+<div class="panel">
+<h2>IA Expert — conseil de 10 spécialistes</h2>
+<div class="expertBanner"><b>Fonctionnement :</b> plusieurs experts locaux évaluent chaque transition. Un critique recherche le maillon faible, applique une réparation technique, puis compare plusieurs mixtapes complètes avant de retenir la meilleure.</div>
+
+<div class="expertStats">
+<div class="expertStat"><b id="expertKbCases">—</b><span>cas synthétiques</span></div>
+<div class="expertStat"><b id="expertKbTemplates">—</b><span>modèles de transition</span></div>
+<div class="expertStat"><b id="expertKbRules">—</b><span>règles expertes</span></div>
+<div class="expertStat"><b id="expertKbContexts">—</b><span>contextes de style</span></div>
+</div>
+
+<h3>Niveau de prise de risque</h3>
+<div class="expertModes">
+<button type="button" class="expertMode" data-expert-mode="safe"><b>Ultra sûr</b><span>Rejette presque toutes les transitions fragiles</span></button>
+<button type="button" class="expertMode active" data-expert-mode="pro"><b>Professionnel</b><span>Équilibre propreté, énergie et variété</span></button>
+<button type="button" class="expertMode" data-expert-mode="creative"><b>Créatif contrôlé</b><span>Autorise les contrastes avec réparation automatique</span></button>
+<button type="button" class="expertMode" data-expert-mode="open-format"><b>Open format</b><span>Genres variés, transitions adaptatives</span></button>
+<button type="button" class="expertMode" data-expert-mode="harmonic"><b>Harmonique</b><span>Priorité à la tonalité et aux textures</span></button>
+<button type="button" class="expertMode" data-expert-mode="energy"><b>Énergie</b><span>Priorité à la narration et aux pics</span></button>
+</div>
+<input id="expertMode" type="hidden" value="pro">
+
+<div class="two">
+<div class="field"><label><span>Contexte de diffusion</span></label><select id="expertVenue">
+<option value="streaming">Streaming</option><option value="club" selected>Club</option><option value="festival">Festival</option>
+<option value="radio">Radio</option><option value="lounge">Lounge</option><option value="headphones">Casque</option>
+<option value="car">Voiture</option><option value="open-format">Open format</option><option value="warmup">Warm-up</option>
+<option value="peak-time">Peak time</option><option value="afterhours">After-hours</option><option value="background">Fond sonore</option>
+</select></div>
+<div class="field"><label><span>Objectif artistique</span></label><select id="expertGoal">
+<option value="smooth">Très fluide</option><option value="balanced" selected>Équilibré</option><option value="club">Club</option>
+<option value="vocal">Vocal propre</option><option value="creative">Créatif</option><option value="calm">Apaisé</option>
+</select></div>
+</div>
+
+<div class="field"><label><span>Durée cible</span><b id="expertDurationLabel">30 min</b></label><input id="expertDuration" type="range" min="0.5" max="120" step="0.5" value="30"></div>
+<div class="field"><label><span>Plans complets comparés</span><b id="expertCandidateLabel">24</b></label><input id="expertCandidateCount" type="range" min="8" max="64" step="4" value="24"></div>
+<div class="field"><label><span>Score minimal visé</span><b id="expertFloorLabel">68 %</b></label><input id="expertFloor" type="range" min="45" max="90" value="68"></div>
+<div class="field"><label><span>Créativité contrôlée</span><b id="expertNoveltyLabel">28 %</b></label><input id="expertNovelty" type="range" min="0" max="100" value="28"></div>
+<div class="field"><label><span>Durée continue maximale</span><b id="expertMaxContinuousLabel">120 s</b></label><input id="expertMaxContinuous" type="range" min="20" max="240" step="5" value="120"></div>
+
+<div class="switch"><span>Utiliser toute la bibliothèque</span><input id="expertWholeLibrary" type="checkbox" checked></div>
+<div class="switch"><span>Analyser automatiquement les titres manquants</span><input id="expertAutoAnalyze" type="checkbox" checked></div>
+<div class="switch"><span>Réparer automatiquement les transitions faibles</span><input id="expertAutoRepair" type="checkbox" checked></div>
+<div class="switch"><span>Appliquer le Style DNA actif</span><input id="expertUseStyleDNA" type="checkbox" checked></div>
+
+<div class="toolbar">
+<button class="btn green" id="expertCreate">Créer le mix expert</button>
+<button class="btn" id="expertAlternative" disabled>Autre proposition</button>
+<button class="btn primary" id="expertPreview" disabled>Prévisualiser 45 s</button>
+</div>
+<div class="toolbar">
+<button class="btn" id="expertTimeline" disabled>Ouvrir la timeline</button>
+<button class="btn pink" id="expertRender" disabled>Ouvrir le rendu</button>
+<button class="btn red" id="expertResetLearning">Réinitialiser ses préférences</button>
+</div>
+
+============================================================
+ FIN DU RAPPORT
+ Transmets ce fichier texte dans la conversation pour correction.
+============================================================
