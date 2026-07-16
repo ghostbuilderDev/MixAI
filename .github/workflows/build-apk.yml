@@ -105,6 +105,61 @@ jobs:
           print("=== gradle.properties normalisé ===")
           print(verification)
           PY
+
+      - name: Préparer et verrouiller la signature Android stable
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .signing generated/.signing
+          KEYSTORE=".signing/html-apk-stable.p12"
+          FINGERPRINT_FILE=".signing/html-apk-stable.sha256"
+
+          if [ ! -f "$KEYSTORE" ]; then
+            keytool -genkeypair               -keystore "$KEYSTORE"               -storetype PKCS12               -storepass "HTML_APK_BUILDER_STABLE_2026"               -keypass "HTML_APK_BUILDER_STABLE_2026"               -alias "html-apk-stable"               -keyalg RSA               -keysize 2048               -validity 10000               -dname "CN=HTML APK Builder, OU=Local Apps, O=GhostBuilder, L=Paris, ST=Ile-de-France, C=FR"
+          fi
+
+          CURRENT_FP=$(keytool -list -v             -keystore "$KEYSTORE"             -storetype PKCS12             -storepass "HTML_APK_BUILDER_STABLE_2026"             -alias "html-apk-stable" 2>/dev/null             | awk -F'SHA256: ' '/SHA256:/{gsub(":","",$2); print tolower($2); exit}')
+
+          [ -n "$CURRENT_FP" ] || {
+            echo "::error title=Signature Android::Empreinte de clé illisible."
+            exit 1
+          }
+
+          if [ -f "$FINGERPRINT_FILE" ]; then
+            EXPECTED_FP=$(tr -d '[:space:]' < "$FINGERPRINT_FILE")
+            [ "$CURRENT_FP" = "$EXPECTED_FP" ] || {
+              echo "::error title=Signature Android::La clé a changé depuis la compilation précédente."
+              exit 1
+            }
+          else
+            printf '%s
+' "$CURRENT_FP" > "$FINGERPRINT_FILE"
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$KEYSTORE" "$FINGERPRINT_FILE"
+          if ! git diff --cached --quiet; then
+            git commit -m "Persist stable Android signing identity"
+            PUSH_OK=0
+            for ATTEMPT in 1 2 3; do
+              if git push origin "HEAD:${{ github.ref_name }}"; then
+                PUSH_OK=1
+                break
+              fi
+              sleep 2
+            done
+            [ "$PUSH_OK" -eq 1 ] || {
+              echo "::error title=Signature Android::La clé stable n’a pas pu être enregistrée."
+              exit 1
+            }
+          fi
+
+          cp "$KEYSTORE" generated/.signing/html-apk-stable.p12
+          printf '%s
+' "$CURRENT_FP" > generated/.signing/html-apk-stable.sha256
+          echo "Empreinte stable : $CURRENT_FP"
+
       - name: Compiler l’APK
         id: compile
         working-directory: generated
@@ -126,15 +181,22 @@ jobs:
             echo "============================================================"
             echo " RAPPORT DIAGNOSTIC HTML VERS APK"
             echo "============================================================"
-            echo "Application : HTML to APK"
-            echo "Package     : com.yoann.ghostbuilderdev"
-            echo "Version     : 1.0.0 (1)"
+            echo "Application : Mon application"
+            echo "Package     : dev.ghostbuilderdev.htmltoapk.monapplication.a1rsolc8"
+            echo "Version     : 1.0.0 (206396740)"
             echo "Date UTC    : $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
             echo "Dépôt       : ${{ github.repository }}"
             echo "Branche     : ${{ github.ref_name }}"
             echo "Run         : #${{ github.run_number }}"
             echo "URL du run  : https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             echo "État du job : ${{ job.status }}"
+            echo
+            echo "=== SIGNATURE ANDROID ==="
+            if [ -f .signing/html-apk-stable.p12 ]; then
+              keytool -list -keystore .signing/html-apk-stable.p12 -storetype PKCS12 -storepass "HTML_APK_BUILDER_STABLE_2026" -alias html-apk-stable -v 2>&1 | grep -E "Alias name:|SHA256:|Valid from:" || true
+            else
+              echo "Clé stable absente."
+            fi
             echo
             echo "=== ANALYSE AUTOMATIQUE DE LA CAUSE PROBABLE ==="
             FOUND=0
@@ -285,18 +347,38 @@ jobs:
             git push origin "HEAD:${{ github.ref_name }}"
           fi
 
-      - name: Préparer l’APK
+      - name: Préparer et vérifier l’APK
         if: success()
+        shell: bash
         run: |
+          set -euo pipefail
           mkdir -p apk-output
-          cp generated/app/build/outputs/apk/debug/app-debug.apk "apk-output/generated-app-debug.apk"
+          APK_FILE="apk-output/Mon-application-dev.ghostbuilderdev.htmltoapk.monapplication.a1rsolc8-v206396740-debug.apk"
+          cp generated/app/build/outputs/apk/debug/app-debug.apk "$APK_FILE"
+
+          {
+            echo "APK=$APK_FILE"
+            echo "PACKAGE_ATTENDU=dev.ghostbuilderdev.htmltoapk.monapplication.a1rsolc8"
+            echo "VERSION_CODE_ATTENDU=206396740"
+            echo "SHA256=$(sha256sum "$APK_FILE" | awk '{print $1}')"
+            "$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK_FILE" | head -n 8
+            "$ANDROID_HOME/build-tools/35.0.0/apksigner" verify --verbose --print-certs "$APK_FILE"
+          } | tee apk-output/apk-verification.txt
+
+          ACTUAL_PACKAGE=$("$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK_FILE" | awk -F"'" '/^package: name=/{print $2; exit}')
+          ACTUAL_VERSION=$("$ANDROID_HOME/build-tools/35.0.0/aapt" dump badging "$APK_FILE" | awk -F"'" '/^package: name=/{print $4; exit}')
+
+          [ "$ACTUAL_PACKAGE" = "dev.ghostbuilderdev.htmltoapk.monapplication.a1rsolc8" ] || exit 1
+          [ "$ACTUAL_VERSION" = "206396740" ] || exit 1
 
       - name: Publier l’APK comme artefact
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: HTML-to-APK-apk
-          path: apk-output/*.apk
+          name: Mon-application-apk
+          path: |
+            apk-output/*.apk
+            apk-output/apk-verification.txt
 
       - name: Publier l’APK dans les Releases
         if: success()
@@ -304,7 +386,77 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           if gh release view generated-apk >/dev/null 2>&1; then
-            gh release upload generated-apk apk-output/*.apk --clobber
+            gh release upload generated-apk apk-output/*.apk apk-output/apk-verification.txt --clobber
           else
-            gh release create generated-apk apk-output/*.apk --title "APK généré" --notes "APK debug généré automatiquement par HTML vers APK Builder."
+            gh release create generated-apk apk-output/*.apk apk-output/apk-verification.txt --title "APK généré" --notes "APK debug généré automatiquement par HTML vers APK Builder."
+          fi
+
+      - name: Finaliser le rapport d’anomalie
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p diagnostics
+          {
+            echo "============================================================"
+            echo " RAPPORT FINAL D’ANOMALIE HTML VERS APK"
+            echo "============================================================"
+            echo "Dépôt : $GITHUB_REPOSITORY"
+            echo "Branche : $GITHUB_REF_NAME"
+            echo "Run : #$GITHUB_RUN_NUMBER"
+            echo "URL : https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            echo "Date UTC : $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            echo
+            echo "=== CODE DE SORTIE GRADLE ==="
+            cat build-exit-code.txt 2>/dev/null || echo "indisponible"
+            echo
+            echo "=== JOURNAL GRADLE ==="
+            cat build.log 2>/dev/null || echo "build.log indisponible"
+            echo
+            echo "=== VÉRIFICATION APK ==="
+            cat apk-output/apk-verification.txt 2>/dev/null || echo "apk-verification.txt indisponible"
+            echo
+            echo "=== DIAGNOSTIC LOCAL HTML ==="
+            cat generated/LOCAL_WEB_DIAGNOSTIC.txt 2>/dev/null || echo "Diagnostic local indisponible"
+            echo
+            echo "=== FICHIERS APK / RAPPORTS PRODUITS ==="
+            find apk-output -maxdepth 2 -type f -printf '%p | %s octets
+' 2>/dev/null || true
+            echo
+            echo "=== ÉTAT DE LA RELEASE ==="
+            if [ -d apk-output ] && find apk-output -name '*.apk' -type f | grep -q .; then
+              echo "Un fichier APK a été produit localement par le workflow."
+            else
+              echo "Aucun APK final présent dans apk-output."
+            fi
+            echo
+            echo "============================================================"
+            echo " FIN DU RAPPORT FINAL"
+            echo "============================================================"
+          } > diagnostics/latest-diagnostic.txt 2>&1
+
+      - name: Publier le rapport final d’anomalie
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: diagnostic-final-apk-run-${{ github.run_number }}
+          path: |
+            diagnostics/latest-diagnostic.txt
+            build.log
+            build-exit-code.txt
+            apk-output/apk-verification.txt
+            generated/LOCAL_WEB_DIAGNOSTIC.txt
+          if-no-files-found: warn
+          retention-days: 30
+
+      - name: Enregistrer le rapport final dans le dépôt
+        if: always()
+        continue-on-error: true
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add diagnostics/latest-diagnostic.txt
+          if ! git diff --cached --quiet; then
+            git commit -m "Final APK diagnostic #${{ github.run_number }}"
+            git push origin "HEAD:${{ github.ref_name }}" || true
           fi
