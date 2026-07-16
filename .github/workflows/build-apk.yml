@@ -54,6 +54,57 @@ jobs:
           test -f generated/app/src/main/AndroidManifest.xml
           test -f generated/app/src/main/assets/www/index.html
 
+
+      - name: Normaliser et réparer la configuration Gradle
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+
+          path = Path("generated/gradle.properties")
+          newline = chr(10)
+          literal_newline = chr(92) + "n"
+
+          default_lines = [
+              "org.gradle.jvmargs=-Xmx2048m -Dfile.encoding=UTF-8",
+              "org.gradle.daemon=false",
+              "org.gradle.parallel=false",
+          ]
+
+          if path.exists():
+              content = path.read_text(encoding="utf-8", errors="replace")
+              content = content.replace(literal_newline, newline)
+              cleaned = []
+              for line in content.splitlines():
+                  stripped = line.strip()
+                  if not stripped:
+                      continue
+                  if stripped.startswith("android.useAndroidX="):
+                      continue
+                  if stripped.startswith("android.nonTransitiveRClass="):
+                      continue
+                  cleaned.append(stripped)
+          else:
+              cleaned = []
+
+          by_key = {}
+          order = []
+          for line in cleaned + default_lines:
+              key = line.split("=", 1)[0] if "=" in line else line
+              if key not in by_key:
+                  order.append(key)
+              by_key[key] = line
+
+          normalized = newline.join(by_key[key] for key in order) + newline
+          path.write_text(normalized, encoding="utf-8")
+
+          verification = path.read_text(encoding="utf-8", errors="strict")
+          if literal_newline in verification:
+              raise SystemExit("Des séquences littérales \n subsistent dans gradle.properties")
+
+          print("=== gradle.properties normalisé ===")
+          print(verification)
+          PY
       - name: Compiler l’APK
         id: compile
         working-directory: generated
@@ -88,6 +139,11 @@ jobs:
             echo "=== ANALYSE AUTOMATIQUE DE LA CAUSE PROBABLE ==="
             FOUND=0
             if [ -f build.log ]; then
+              if grep -Eqi "Could not find or load main class android.useAndroidX=true|ClassNotFoundException: android.useAndroidX=true" build.log; then
+                echo "- GRADLE.PROPERTIES MAL FORMÉ : les retours à la ligne ont été enregistrés sous forme de texte \n."
+                echo "- CORRECTION : normaliser gradle.properties et retirer les propriétés AndroidX inutiles."
+                FOUND=1
+              fi
               if grep -qi "Android resource linking failed" build.log; then
                 echo "- ERREUR RESSOURCES ANDROID : XML, thème, icône ou ressource invalide."
                 FOUND=1
@@ -177,10 +233,16 @@ jobs:
             sed -n '1,700p' generated/app/src/main/AndroidManifest.xml 2>/dev/null || true
             echo
             echo "=== FICHIERS JAVA ==="
-            find generated/app/src/main -name '*.java' -type f -print -exec sh -c 'echo "--- $1 ---"; sed -n "1,1400p" "$1"' sh {} ; 2>/dev/null || true
+            while IFS= read -r file; do
+              echo "--- $file ---"
+              sed -n '1,1400p' "$file"
+            done < <(find generated/app/src/main -name '*.java' -type f -print 2>/dev/null)
             echo
             echo "=== RESSOURCES XML ANDROID ==="
-            find generated/app/src/main/res -name '*.xml' -type f -print -exec sh -c 'echo "--- $1 ---"; sed -n "1,700p" "$1"' sh {} ; 2>/dev/null || true
+            while IFS= read -r file; do
+              echo "--- $file ---"
+              sed -n '1,700p' "$file"
+            done < <(find generated/app/src/main/res -name '*.xml' -type f -print 2>/dev/null)
             echo
             echo "=== DIAGNOSTIC LOCAL DU PROJET WEB ==="
             cat generated/LOCAL_WEB_DIAGNOSTIC.txt 2>/dev/null || echo "Diagnostic local absent."
