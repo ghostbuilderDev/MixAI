@@ -126,7 +126,7 @@ jobs:
             echo "============================================================"
             echo " RAPPORT DIAGNOSTIC HTML VERS APK"
             echo "============================================================"
-            echo "Application : Mon application"
+            echo "Application : HTML to APK"
             echo "Package     : com.yoann.ghostbuilderdev"
             echo "Version     : 1.0.0 (1)"
             echo "Date UTC    : $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
@@ -295,7 +295,7 @@ jobs:
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: Mon-application-apk
+          name: HTML-to-APK-apk
           path: apk-output/*.apk
 
       - name: Publier l’APK dans les Releases
