@@ -4,11 +4,11 @@
 Application : Mon application
 Package     : com.yoann.ghostbuilderdev
 Version     : 1.0.0 (1)
-Date UTC    : 2026-07-16 07:53:04 UTC
+Date UTC    : 2026-07-16 08:10:42 UTC
 Dépôt       : ghostbuilderDev/MixAI
 Branche     : main
-Run         : #8
-URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29481351665
+Run         : #9
+URL du run  : https://github.com/ghostbuilderDev/MixAI/actions/runs/29482468979
 État du job : success
 
 === ANALYSE AUTOMATIQUE DE LA CAUSE PROBABLE ===
@@ -25,8 +25,8 @@ Daemon will be stopped at the end of the build
 > Task :app:preBuild UP-TO-DATE
 > Task :app:preDebugBuild UP-TO-DATE
 > Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
-> Task :app:javaPreCompileDebug
 > Task :app:checkDebugAarMetadata
+> Task :app:javaPreCompileDebug
 > Task :app:generateDebugResValues
 > Task :app:mapDebugSourceSetPaths
 > Task :app:generateDebugResources
@@ -39,17 +39,21 @@ Daemon will be stopped at the end of the build
 > Task :app:processDebugManifest
 > Task :app:mergeDebugShaders
 > Task :app:compileDebugShaders NO-SOURCE
-> Task :app:processDebugManifestForPackage
 > Task :app:generateDebugAssets UP-TO-DATE
 > Task :app:mergeDebugAssets
 > Task :app:desugarDebugFileDependencies
 > Task :app:processDebugJavaRes NO-SOURCE
+> Task :app:processDebugManifestForPackage
+> Task :app:mergeDebugJavaResource
 > Task :app:checkDebugDuplicateClasses
 > Task :app:compressDebugAssets
-> Task :app:processDebugResources
-> Task :app:mergeExtDexDebug
 > Task :app:mergeLibDexDebug
-> Task :app:mergeDebugJavaResource
+> Task :app:mergeExtDexDebug
+> Task :app:mergeDebugJniLibFolders
+> Task :app:mergeDebugNativeLibs NO-SOURCE
+> Task :app:stripDebugDebugSymbols NO-SOURCE
+> Task :app:processDebugResources
+> Task :app:validateSigningDebug
 
 > Task :app:compileDebugJavaWithJavac
 Note: /home/runner/work/MixAI/MixAI/generated/app/src/main/java/com/yoann/ghostbuilderdev/MainActivity.java uses or overrides a deprecated API.
@@ -57,19 +61,15 @@ Note: Recompile with -Xlint:deprecation for details.
 
 > Task :app:dexBuilderDebug
 > Task :app:mergeDebugGlobalSynthetics
-> Task :app:mergeDebugJniLibFolders
-> Task :app:mergeDebugNativeLibs NO-SOURCE
-> Task :app:stripDebugDebugSymbols NO-SOURCE
-> Task :app:mergeProjectDexDebug
-> Task :app:validateSigningDebug
 > Task :app:writeDebugAppMetadata
 > Task :app:writeDebugSigningConfigVersions
+> Task :app:mergeProjectDexDebug
 > Task :app:packageDebug
 > Task :app:createDebugApkListingFileRedirect
 > Task :app:assembleDebug
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/compile-1784188330595.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/compile-1784189430894.json
 
-BUILD SUCCESSFUL in 1m
+BUILD SUCCESSFUL in 15s
 32 actionable tasks: 32 executed
 
 === VERSIONS DE L’ENVIRONNEMENT ===
@@ -89,7 +89,7 @@ Groovy:        3.0.21
 Ant:           Apache Ant(TM) version 1.10.13 compiled on January 4 2023
 Launcher JVM:  17.0.19 (Eclipse Adoptium 17.0.19+10)
 Daemon JVM:    /usr/lib/jvm/temurin-17-jdk-amd64 (no JDK specified, using current Java home)
-OS:            Linux 6.17.0-1018-azure amd64
+OS:            Linux 6.17.0-1020-azure amd64
 
 ANDROID_HOME=/usr/local/lib/android/sdk
 ANDROID_SDK_ROOT=/usr/local/lib/android/sdk
@@ -130,8 +130,8 @@ Installed packages:
 
 
 === INFORMATIONS SUR project.zip ===
--rw-r--r-- 1 runner runner 20M Jul 16 07:51 project.zip
-a3e4ebf36ffd8d618936b4f2b24307153c348e408e56d3f5601d5231484dd421  project.zip
+-rw-r--r-- 1 runner runner 20M Jul 16 08:09 project.zip
+0ca3fb8d24f4d26a349cfbf5eb27075bd83cd594e38536521ac3764a3692c285  project.zip
 Archive:  project.zip
     testing: LOCAL_WEB_DIAGNOSTIC.txt   OK
     testing: settings.gradle.kts      OK
@@ -151,11 +151,10 @@ Archive:  project.zip
     testing: app/src/main/assets/www/index.html   OK
     testing: app/src/main/assets/www/ai-expert-knowledge-pack.json   OK
     testing: app/src/main/assets/www/ai-mix-knowledge-base.json   OK
-    testing: app/src/main/assets/www/manifest.webmanifest   OK
-    testing: app/src/main/assets/www/STYLE_DNA_PRO_METHOD.md   OK
     testing: app/src/main/assets/www/README.txt   OK
-    testing: app/src/main/assets/www/validation-report.json   OK
+    testing: app/src/main/assets/www/STYLE_DNA_PRO_METHOD.md   OK
     testing: app/src/main/assets/www/sw.js   OK
+    testing: app/src/main/assets/www/validation-report.json   OK
     testing: app/src/main/assets/www/android-bridge.js   OK
     testing: app/src/main/res/mipmap-mdpi/ic_launcher.png   OK
     testing: app/src/main/res/mipmap-hdpi/ic_launcher.png   OK
@@ -169,24 +168,22 @@ No errors detected in compressed data of project.zip.
 generated/.github/workflows/build-apk.yml | 12141 octets
 generated/.gitignore | 54 octets
 generated/.gradle/8.9/checksums/checksums.lock | 17 octets
-generated/.gradle/8.9/checksums/md5-checksums.bin | 28347 octets
-generated/.gradle/8.9/checksums/sha1-checksums.bin | 41717 octets
 generated/.gradle/8.9/dependencies-accessors/gc.properties | 0 octets
-generated/.gradle/8.9/executionHistory/executionHistory.bin | 93905 octets
+generated/.gradle/8.9/executionHistory/executionHistory.bin | 93306 octets
 generated/.gradle/8.9/executionHistory/executionHistory.lock | 17 octets
 generated/.gradle/8.9/fileChanges/last-build.bin | 1 octets
-generated/.gradle/8.9/fileHashes/fileHashes.bin | 24347 octets
+generated/.gradle/8.9/fileHashes/fileHashes.bin | 24197 octets
 generated/.gradle/8.9/fileHashes/fileHashes.lock | 17 octets
-generated/.gradle/8.9/fileHashes/resourceHashesCache.bin | 18769 octets
+generated/.gradle/8.9/fileHashes/resourceHashesCache.bin | 18701 octets
 generated/.gradle/8.9/gc.properties | 0 octets
 generated/.gradle/buildOutputCleanup/buildOutputCleanup.lock | 17 octets
 generated/.gradle/buildOutputCleanup/cache.properties | 49 octets
 generated/.gradle/buildOutputCleanup/outputFiles.bin | 22169 octets
 generated/.gradle/file-system.probe | 8 octets
 generated/.gradle/vcs-1/gc.properties | 0 octets
-generated/LOCAL_WEB_DIAGNOSTIC.txt | 1065 octets
+generated/LOCAL_WEB_DIAGNOSTIC.txt | 1095 octets
 generated/README.md | 1233 octets
-generated/SOURCE_INFO.json | 1130 octets
+generated/SOURCE_INFO.json | 1060 octets
 generated/app/build.gradle.kts | 672 octets
 generated/app/build/intermediates/annotation_processor_list/debug/javaPreCompileDebug/annotationProcessors.json | 2 octets
 generated/app/build/intermediates/apk_ide_redirect_file/debug/createDebugApkListingFileRedirect/redirect.txt | 81 octets
@@ -197,7 +194,6 @@ generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/ai-expert-kn
 generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/ai-mix-knowledge-base.json | 6657807 octets
 generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/android-bridge.js | 956 octets
 generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/index.html | 6939016 octets
-generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/manifest.webmanifest | 220 octets
 generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/sw.js | 519 octets
 generated/app/build/intermediates/assets/debug/mergeDebugAssets/www/validation-report.json | 341 octets
 generated/app/build/intermediates/compatible_screen_manifest/debug/createDebugCompatibleScreenManifests/output-metadata.json | 201 octets
@@ -208,7 +204,6 @@ generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/ou
 generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/ai-mix-knowledge-base.json.jar | 887678 octets
 generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/android-bridge.js.jar | 494 octets
 generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/index.html.jar | 978435 octets
-generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/manifest.webmanifest.jar | 312 octets
 generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/sw.js.jar | 427 octets
 generated/app/build/intermediates/compressed_assets/debug/compressDebugAssets/out/assets/www/validation-report.json.jar | 381 octets
 generated/app/build/intermediates/desugar_graph/debug/dexBuilderDebug/out/currentProject/dirs_bucket_0/graph.bin | 2377 octets
@@ -228,13 +223,13 @@ generated/app/build/intermediates/incremental/debug/packageDebugResources/compil
 generated/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values-v31/values-v31.xml | 452 octets
 generated/app/build/intermediates/incremental/debug/packageDebugResources/merged.dir/values/values.xml | 842 octets
 generated/app/build/intermediates/incremental/debug/packageDebugResources/merger.xml | 4230 octets
-generated/app/build/intermediates/incremental/mergeDebugAssets/merger.xml | 1880 octets
+generated/app/build/intermediates/incremental/mergeDebugAssets/merger.xml | 1749 octets
 generated/app/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml | 476 octets
 generated/app/build/intermediates/incremental/mergeDebugShaders/merger.xml | 476 octets
 generated/app/build/intermediates/incremental/packageDebug/tmp/debug/dex-renamer-state.txt | 351 octets
 generated/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/androidResources | 553 octets
 generated/app/build/intermediates/incremental/packageDebug/tmp/debug/zip-cache/javaResources0 | 22 octets
-generated/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_ | 68053 octets
+generated/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/linked-resources-binary-format-debug.ap_ | 68317 octets
 generated/app/build/intermediates/linked_resources_binary_format/debug/processDebugResources/output-metadata.json | 431 octets
 generated/app/build/intermediates/local_only_symbol_list/debug/parseDebugLocalResources/R-def.txt | 147 octets
 generated/app/build/intermediates/manifest_merge_blame_file/debug/processDebugMainManifest/manifest-merger-blame-debug-report.txt | 5286 octets
@@ -242,11 +237,11 @@ generated/app/build/intermediates/merged_java_res/debug/mergeDebugJavaResource/b
 generated/app/build/intermediates/merged_manifest/debug/processDebugMainManifest/AndroidManifest.xml | 1914 octets
 generated/app/build/intermediates/merged_manifests/debug/processDebugManifest/AndroidManifest.xml | 1914 octets
 generated/app/build/intermediates/merged_manifests/debug/processDebugManifest/output-metadata.json | 396 octets
-generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.png.flat | 4740 octets
-generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.png.flat | 2580 octets
-generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.png.flat | 8584 octets
-generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.png.flat | 18192 octets
-generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.png.flat | 30468 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-hdpi_ic_launcher.png.flat | 4840 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-mdpi_ic_launcher.png.flat | 2652 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xhdpi_ic_launcher.png.flat | 8616 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxhdpi_ic_launcher.png.flat | 18216 octets
+generated/app/build/intermediates/merged_res/debug/mergeDebugResources/mipmap-xxxhdpi_ic_launcher.png.flat | 30496 octets
 generated/app/build/intermediates/merged_res/debug/mergeDebugResources/values-v31_values-v31.arsc.flat | 588 octets
 generated/app/build/intermediates/merged_res/debug/mergeDebugResources/values_values.arsc.flat | 964 octets
 generated/app/build/intermediates/merged_res_blame_folder/debug/mergeDebugResources/out/multi-v2/mergeDebugResources.json | 2692 octets
@@ -257,11 +252,11 @@ generated/app/build/intermediates/navigation_json/debug/extractDeepLinksDebug/na
 generated/app/build/intermediates/nested_resources_validation_report/debug/generateDebugResources/nestedResourcesValidationReport.txt | 15 octets
 generated/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/AndroidManifest.xml | 1914 octets
 generated/app/build/intermediates/packaged_manifests/debug/processDebugManifestForPackage/output-metadata.json | 398 octets
-generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher.png | 4607 octets
-generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher.png | 2445 octets
-generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher.png | 8445 octets
-generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher.png | 18053 octets
-generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher.png | 30329 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-hdpi-v4/ic_launcher.png | 4707 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-mdpi-v4/ic_launcher.png | 2519 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xhdpi-v4/ic_launcher.png | 8477 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxhdpi-v4/ic_launcher.png | 18079 octets
+generated/app/build/intermediates/packaged_res/debug/packageDebugResources/mipmap-xxxhdpi-v4/ic_launcher.png | 30358 octets
 generated/app/build/intermediates/packaged_res/debug/packageDebugResources/values-v31/values-v31.xml | 452 octets
 generated/app/build/intermediates/packaged_res/debug/packageDebugResources/values/values.xml | 842 octets
 generated/app/build/intermediates/project_dex_archive/debug/dexBuilderDebug/out/55bfade0dfbcc2aa04301096fa081de118f3a81bac4eb71e03338a3af25254f9_1.jar | 1044 octets
@@ -269,7 +264,7 @@ generated/app/build/intermediates/runtime_symbol_list/debug/processDebugResource
 generated/app/build/intermediates/signing_config_versions/debug/writeDebugSigningConfigVersions/signing-config-versions.json | 96 octets
 generated/app/build/intermediates/source_set_path_map/debug/mapDebugSourceSetPaths/file-map.txt | 903 octets
 generated/app/build/intermediates/stable_resource_ids_file/debug/processDebugResources/stableIds.txt | 287 octets
-generated/app/build/outputs/apk/debug/app-debug.apk | 2837906 octets
+generated/app/build/outputs/apk/debug/app-debug.apk | 2837877 octets
 generated/app/build/outputs/apk/debug/output-metadata.json | 409 octets
 generated/app/build/outputs/logs/manifest-merger-debug-report.txt | 6233 octets
 generated/app/build/tmp/compileDebugJavaWithJavac/previous-compilation-data.bin | 38035 octets
@@ -281,15 +276,14 @@ generated/app/src/main/assets/www/ai-expert-knowledge-pack.json | 6657807 octets
 generated/app/src/main/assets/www/ai-mix-knowledge-base.json | 6657807 octets
 generated/app/src/main/assets/www/android-bridge.js | 956 octets
 generated/app/src/main/assets/www/index.html | 6939016 octets
-generated/app/src/main/assets/www/manifest.webmanifest | 220 octets
 generated/app/src/main/assets/www/sw.js | 519 octets
 generated/app/src/main/assets/www/validation-report.json | 341 octets
 generated/app/src/main/java/com/yoann/ghostbuilderdev/MainActivity.java | 15806 octets
-generated/app/src/main/res/mipmap-hdpi/ic_launcher.png | 4607 octets
-generated/app/src/main/res/mipmap-mdpi/ic_launcher.png | 2445 octets
-generated/app/src/main/res/mipmap-xhdpi/ic_launcher.png | 8445 octets
-generated/app/src/main/res/mipmap-xxhdpi/ic_launcher.png | 18053 octets
-generated/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png | 30329 octets
+generated/app/src/main/res/mipmap-hdpi/ic_launcher.png | 4707 octets
+generated/app/src/main/res/mipmap-mdpi/ic_launcher.png | 2519 octets
+generated/app/src/main/res/mipmap-xhdpi/ic_launcher.png | 8477 octets
+generated/app/src/main/res/mipmap-xxhdpi/ic_launcher.png | 18079 octets
+generated/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png | 30358 octets
 generated/app/src/main/res/values-v31/styles.xml | 452 octets
 generated/app/src/main/res/values/colors.xml | 161 octets
 generated/app/src/main/res/values/strings.xml | 116 octets
@@ -812,24 +806,15 @@ public class MainActivity extends Activity {
 }
 
 === RESSOURCES XML ANDROID ===
---- generated/app/src/main/res/values-v31/styles.xml ---
+--- generated/app/src/main/res/values/strings.xml ---
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
-        <item name="android:windowBackground">@color/window_background</item>
-        <item name="android:statusBarColor">@color/brand_color</item>
-        <item name="android:navigationBarColor">@color/window_background</item>
-        <item name="android:windowLightStatusBar">false</item>
-    </style>
+    <string name="app_name">Mon application</string>
 </resources>--- generated/app/src/main/res/values/colors.xml ---
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="brand_color">#FF7A1A</color>
     <color name="window_background">#11141B</color>
-</resources>--- generated/app/src/main/res/values/strings.xml ---
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">Mon application</string>
 </resources>--- generated/app/src/main/res/values/styles.xml ---
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -843,22 +828,31 @@ public class MainActivity extends Activity {
         <item name="android:navigationBarColor">@color/window_background</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
+</resources>--- generated/app/src/main/res/values-v31/styles.xml ---
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="@android:style/Theme.Material.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="android:statusBarColor">@color/brand_color</item>
+        <item name="android:navigationBarColor">@color/window_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
 </resources>
 === DIAGNOSTIC LOCAL DU PROJET WEB ===
 ============================================================
  DIAGNOSTIC LOCAL DU PROJET WEB
 ============================================================
-Date : 2026-07-16T07:51:08.112Z
+Date : 2026-07-16T08:09:34.078Z
 Application : Mon application
 Package : com.yoann.ghostbuilderdev
-Fichiers intégrés : 9
+Fichiers intégrés : 8
 Références HTML analysées : 1
 Ressources externes : 0
-Erreurs détectées : 0
+Erreurs détectées : 1
 Avertissements : 1
 
 === ERREURS ===
-- Aucune erreur locale évidente.
+- Fichier référencé mais non fourni : manifest.webmanifest → manifest.webmanifest
 
 === AVERTISSEMENTS ===
 - Service Worker détecté : son comportement peut être limité dans une WebView Android locale.
@@ -871,11 +865,10 @@ Avertissements : 1
 - index.html
 - ai-expert-knowledge-pack.json
 - ai-mix-knowledge-base.json
-- manifest.webmanifest
-- STYLE_DNA_PRO_METHOD.md
 - README.txt
-- validation-report.json
+- STYLE_DNA_PRO_METHOD.md
 - sw.js
+- validation-report.json
 - android-bridge.js
 
 Ce rapport local est complété par latest-diagnostic.txt après la compilation GitHub.
@@ -887,7 +880,6 @@ generated/app/src/main/assets/www/ai-expert-knowledge-pack.json | 6657807 octets
 generated/app/src/main/assets/www/ai-mix-knowledge-base.json | 6657807 octets
 generated/app/src/main/assets/www/android-bridge.js | 956 octets
 generated/app/src/main/assets/www/index.html | 6939016 octets
-generated/app/src/main/assets/www/manifest.webmanifest | 220 octets
 generated/app/src/main/assets/www/sw.js | 519 octets
 generated/app/src/main/assets/www/validation-report.json | 341 octets
 
